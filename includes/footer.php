@@ -8,6 +8,6 @@
 		</div>
 	</div>
 	<br />
-	<p align="center"><a href="http://httpd.apache.org/"><img src="/icons/apache_pb2.gif" alt="[ Powered by Apache ]"/></a></p>
+	<p align="center"><a href="http://httpd.apache.org/"><img src="./images/apache_pb2.gif" alt="[ Powered by Apache ]"/></a></p>
 </body>
 </html>

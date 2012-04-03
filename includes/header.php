@@ -7,6 +7,8 @@
 	<link rel="canonical" href="http://<?php echo $_SERVER["HTTP_HOST"] ?><?php echo parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH); ?>" />
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" src="js/external.js"></script>
+	<link rel="shortcut icon" href="./images/icon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body id="<?php echo pageid; ?>">
