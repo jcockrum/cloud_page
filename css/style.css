@@ -1,0 +1,178 @@
+body{
+background:#f7f7f7 url(../images/bg.gif);
+padding:0;
+border:0;
+margin:40px 0 40px 0;
+overflow:auto}
+
+body, div, p, input, textarea{
+font-family:arial;
+font-size:14px;
+color:#666;
+line-height:20px}
+
+a, a:active, a:visited, a:link{
+font-family:georgia;
+font-size:14px;
+color:#0099ff;
+text-decoration:none}
+
+a:hover{
+color:#5ebcfb;
+text-decoration:underline}
+
+h1, h2, h3{font-weight:normal}
+
+h1, .site-title a{
+font-family:helvetica, arial;
+font-size:25px;
+color:#666;
+text-shadow:0px 1px 0px #fff;
+display:inline}
+
+.site-title a:hover{text-decoration:none}
+
+h2{
+font-family:helvetica, arial;
+font-size:20px;
+color:#0099ff}
+
+.h2top{margin-top:0px}
+
+.copyright, .copyright a{
+font-size:13px;
+color:#aaa;
+text-shadow:0px 1px 0px #fff;
+text-align:center;
+margin-top:25px}
+
+input{
+background:#f7f7f7;
+padding:3px 5px 3px 5px;
+border:1px #999 solid}
+
+textarea{
+background:#f7f7f7;
+padding:6px 8px 6px 8px;
+border:1px #999 solid;
+overflow:auto}
+
+.button{
+background:transparent;
+font-family:georgia;
+font-size:20px;
+color:#0099ff;
+border:0}
+
+#header{
+width:960px;
+padding:0 0 10px 0;
+margin:0 auto 0 auto}
+
+#content{
+background:#fff;
+width:920px;
+min-height:395px;
+height:100%;
+padding:20px;
+margin:0 auto 0 auto;
+border:#ccc 4px double;
+box-shadow:0px 5px 15px #aaa;
+text-align:justify}
+
+#footer{
+width:960px;
+margin:0 auto 0 auto}
+
+a img{border:none}
+
+a{outline:none}
+
+p{margin:0}
+
+input[type=submit]{cursor:pointer}
+
+.left{text-align:left}
+
+.right{text-align:right}
+
+.center{text-align:center}
+
+.justify{text-align:justify}
+
+.floatleft{float:left}
+
+.floatright{float:right}
+
+.clearleft{clear:left}
+
+.clearright{clear:right}
+
+.clear{clear:both}
+
+.nav{
+font-size:16;
+text-shadow:1px 1px 1px #ccc}
+
+.nav ul, .nav ul li{
+display:inline;
+margin:0;
+padding:0;
+list-style:none}
+
+.nav ul li{position:relative}
+
+.nav ul li a{
+display:inline-block;
+font-family:georgia;
+font-size:16px;
+color:#333;
+text-decoration:none;
+text-shadow:1px 1px 1px #ccc;
+padding-bottom:5px;
+margin:-2px 0px 0px 0px}
+
+.nav ul li a:hover{
+display:inline-block;
+font-family:georgia;
+font-size:16px;
+color:#666;
+text-decoration:none;
+text-shadow:1px 1px 1px #ccc
+margin:-2px 0px 0px 0px}
+
+.nav li ul{
+display:none;
+position:absolute;
+top:23px;
+left:0px}
+
+.nav ul li:hover ul{display:inline-block}
+
+.nav ul ul, .nav ul li:hover ul ul, .nav ul ul li:hover ul ul{display:none}
+
+.nav ul li:hover ul, .nav ul ul li:hover ul, .nav ul ul ul li:hover ul{display:block}
+
+.nav ul li:hover ul li a, .nav ul ul li:hover ul li a, .nav ul ul ul li:hover ul li a{
+background:#fff;
+border:#ccc 1px solid;
+margin-top:1px}
+
+html>/**/body .nav ul li:hover ul li a, .nav ul ul li:hover ul li a, .nav ul ul ul li:hover ul li a{
+background:#fff;
+border:#ccc 1px solid;
+margin-top:-1px}
+
+.nav ul li:hover ul li a{
+width:150px;
+padding:5px}
+
+.nav ul ul li:hover ul li a{
+width:145px;
+padding:5px 5px 5px 10px}
+
+.nav ul ul ul li:hover ul li a{
+width:140px;
+padding:5px 5px 5px 15px}
+
+.none, .name2{display:none}

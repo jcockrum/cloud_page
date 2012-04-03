@@ -1,0 +1,6 @@
+# robots.txt 
+User-agent: *
+Disallow: /*?
+Disallow: /cgi-bin/
+
+Sitemap: http://www.yourwebsite.com/sitemap.xml
