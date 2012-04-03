@@ -7,6 +7,7 @@
 			<a href="http://www.freewebplate.org/">FREEWebPlate</a>
 		</div>
 	</div>
+	<br />
 	<p align="center"><a href="http://httpd.apache.org/"><img src="/icons/apache_pb2.gif" alt="[ Powered by Apache ]"/></a></p>
 </body>
 </html>

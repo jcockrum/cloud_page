@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-
 <head>
-	<title><?php echo title; ?> | Your/Company Name</title>
+	<title><?php echo title; ?> | Slave of the Invisible</title>
 	<meta name="description" content="<?php echo description; ?>" />
 	<meta name="keywords" content="<?php echo keywords; ?>" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -13,10 +12,11 @@
 <body id="<?php echo pageid; ?>">
 
 <div id="header"> 
-	<h1 class="site-title"><a href="./">Your/Company Name</a></h1>
+	<h1 class="site-title"><a href="./">Slave of the Invisible</a></h1>
 		<div class="nav"><br />
+		<!-- replace with the home link -->
 		<ul>
-			<li><a href="./">Page 1</a> |
+			<li><a href="./">Page 1</a></li> |
 		</ul>
 		<ul>
 			<li><a href="http://184.169.130.102/">Home</a></li> | 

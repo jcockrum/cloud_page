@@ -1,6 +1,6 @@
-<?php define("title","Title of page goes here."); ?>
-<?php define("description","Description of page goes here."); ?>
-<?php define("keywords","keywords, of, page, go, here"); ?>
+<?php define("title","Invisible"); ?>
+<?php define("description","MINS335 Cloud Server"); ?>
+<?php define("keywords",""); ?>
 
 <?php define("pageid","home"); ?>
 
