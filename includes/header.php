@@ -16,21 +16,17 @@
 <div id="header"> 
 	<h1 class="site-title"><a href="./">Slave of the Invisible</a></h1>
 		<div class="nav"><br />
-		<!-- replace with the home link -->
-		<ul>
-			<li><a href="./">Page 1</a></li> |
-		</ul>
-		<ul>
-			<li><a href="http://184.169.130.102/">Home</a></li> | 
-			<li><a href="http://184.169.130.102/phpmyadmin/">PhpMyAdmin</a></li> |
-			<li><a href="http://184.169.130.102/project/ ">Project</a></li> |
-		</ul>
-		<br />
-		<ul>
-			<li><a href="http://184.169.130.102/AlienCH2/report.html">Alien</a></li> | 
-			<li><a href="http://184.169.130.102/makemeelvis">Rockin Elvis</a></li> |
-			<li><a href="http://184.169.130.102/RKS/index.html">Rocksmith</a></li> |
-		</ul>
+		        <ul>
+			        <li><a href="http://184.169.130.102/">Home</a></li> | 
+			        <li><a href="http://184.169.130.102/phpmyadmin/">PhpMyAdmin</a></li> |
+			        <li><a href="http://184.169.130.102/project/ ">Project</a></li> |
+		        </ul>
+		        <br />
+		        <ul>
+			        <!-- <li><a href="http://184.169.130.102/AlienCH2/report.html">Alien</a></li> | -->
+			        <!-- <li><a href="http://184.169.130.102/makemeelvis">Rockin Elvis</a></li> |-->
+			        <!-- <li><a href="http://184.169.130.102/RKS/index.html">Rocksmith</a></li> |-->
+		        </ul>
 		</div>
 	</div>
 <div id="content">
