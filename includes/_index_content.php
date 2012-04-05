@@ -7,7 +7,7 @@
 
 	<div class="rightcontent">
 		<h2>A mostly blank web page that does, in fact, exist</h2>
-		<p>If there was content it would be around here somewhere</p>
+		<p>If there was content, it would be around here somewhere</p>
 	</div>
 	<br class="clear" />
 </div>

@@ -1,0 +1,29 @@
+Spring 2012 MINS 335 project
+
+Roland is the owner of an automotive repair shop in Corona, CA. He has asked our group to redesign his website and include a database component so that he can communicate more efficiently with his customers.
+He would like to have an application on his website that will allow his customers to make appointments for their cars to be fixed. Furthermore, customers can request whether or not they need to be pickup or drop-off. Include having the database information ready in an easy format for Roland’s secretary to review and analyze. 
+
+These are Roland’s existing websites for his auto repair business. 
+	http://www.aplusautocorona.com/
+	http://www.aplusautorepair.us/
+
+==================================================================================================
+Project Context  
+	Design and build a web scheduling application for  an automotive repair shop in Corona, CA
+
+Major Actors  
+	Customers, System administrator
+
+System Goals 
+	Allow his customers to make appointments for their cars to be fixed. 
+	Easy format for Roland’s secretary to review and analyze
+
+Estimated Project Scope
+	3-4 web pages 
+	4-5 entities in the database
+<<<<<<< HEAD
+
+just to see
+=======
+================================================================================================
+>>>>>>> f3005a4c32a2d8505aa3dba7a13d70c8799f762c
