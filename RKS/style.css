@@ -1,0 +1,38 @@
+div.container {
+  border: 1px solid gray;
+  margin: 0px;
+  width: 100%;
+  line-height: 150%;
+}
+div.header, div.footer, div.linkbar {
+  padding: 0.5em;
+  color: white;
+  background-color: gray;
+  clear: left;
+}
+h1.header {
+  margin: 0;
+  padding: 0;
+}
+div.left {
+  margin: 0;
+  padding: 1em;
+  width: 355px;
+  height: 420px;
+  float: left;
+}
+div.content {
+  border-left: 1px solid gray;
+  padding: 1px;
+  margin-left: 387px;
+  width: 670px;
+  height: 465px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  display: inline;
+}

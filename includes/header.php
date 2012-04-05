@@ -20,8 +20,8 @@
                         <li><a href="http://184.169.130.102/">Home</a> |
                                 <ul>
                                         <li><a href="http://184.169.130.102/phpmyadmin/">PhpMyAdmin</a></li>
-                                        <!-- <li><a href="#">Sub 2</a></li> -->
-                                        <!-- <li><a href="#">Sub 3</a></li> -->
+                                        <li><a href="#./rks/ ">Rocksmith Mail Page</a></li>
+                                        <!-- <li><a href="#">MakeMeElvis</a></li> -->
                                 </ul>
                          </li>
                         <li><a href="./project/ ">Project</a>

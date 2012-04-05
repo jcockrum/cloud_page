@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>My Rocksmith - Send Email</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div class="header"><h1 class="header"> My Rocksmith Page<br /></h1></div>
+
+<div class="linkbar">
+	<ul>
+		<li><a href="http://184.169.130.102/">Main Home</a></li> |
+		<il><a href="rocksmith.html">My Rocksmith</a><li>
+	</ul>
+		<lu> 
+			<li><a href="addemail.html">Add</a></li>
+			<li><a href="sendemail.html">Send</a></li>
+			<li><a href="removeemail.html">Remove</a></li>
+		</lu>
+</div>
+
+
+<img src="Img/rocksmith-amp.jpg" style="width: 640px; height: 320px;" alt="" ;="" align="right" />
+  <p>Write and send an email to mailing list members.</p>
+  <form method="post" action="sendemail.php">
+    <label for="subject">Subject of email:</label><br />
+    <input id="subject" name="subject" type="text" size="30" /><br />
+    <label for="rockthemail">Body of email:</label><br />
+    <textarea id="rockthemail" name="rockthemail" rows="8" cols="40"></textarea><br />
+    <input type="submit" name="Submit" value="Submit" />
+  </form>
+<div class="footer">
+<p> <small>All Rights Reserved.</small></p>
+</div>
+</body></html>
