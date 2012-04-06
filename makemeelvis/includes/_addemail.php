@@ -23,7 +23,7 @@
         $last_name = $_POST['lastname'];
         $email = $_POST['email'];
 
-        echo "INSERT INTO $tbl_name (first_name, last_name, email)  VALUES ('$first_name', '$last_name', '$email'); <br />";
+        echo "INSERT INTO $tbl_name (first_name, last_name, email)  VALUES ('$_POST['firstname']', '$_POST['lastname']', '$_POST['email']'); <br />";
 
        
         mysqli_query( "INSERT INTO $tbl_name (first_name, last_name, email)  VALUES ('$first_name', '$last_name', '$email');") 
