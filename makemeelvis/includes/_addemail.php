@@ -1,16 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Make Me Elvis - Add Email</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-<body>
+<?php define("title","MakeMeElvis"); ?>
+<?php define("description","Make Me Elvis"); ?>
+<?php define("keywords",""); ?>
+
+<?php define("pageid","Added User"); ?>
+
+<?php include('includes/header.php'); ?> 
 
 <?php
-  $dbc = mysqli_connect('data.makemeelvis.com', 'elmer', 'theking', 'elvis_store')
-    or die('Error connecting to MySQL server.');
+  $dbc = mysqli_connect('http://184.169.130.102/index.php', 'root', '1q2w3e4r', 'elvis_store') or die('Error connecting to MySQL server.');
 
   $first_name = $_POST['firstname'];
   $last_name = $_POST['lastname'];
@@ -25,5 +22,4 @@
   mysqli_close($dbc);
 ?>
 
-</body>
-</html>
+<?php include('includes/footer.php'); ?>
