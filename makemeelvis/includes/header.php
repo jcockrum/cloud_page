@@ -17,20 +17,14 @@
 	<h1 class="site-title"><a href="./">Slave of the Invisible</a></h1>
 		<div class="nav"><br />
                 <ul>
-                        <li><a href="http://184.169.130.102/">Home</a> |
+                        <li><a href="./">Home</a> |
                                 <ul>
-                                        <li><a href="http://184.169.130.102/phpmyadmin/">PhpMyAdmin</a></li>
-                                        <li><a href="./RKS/ ">Rocksmith Mail</a></li>
-                                        <li><a href="./makemeelvis/">Make Me Elvis</a></li>
+                                        <li><a href="http://184.169.130.102/">Main Home</a></li>
                                 </ul>
                          </li>
-                        <li><a href="./project/ ">Project</a>
-                                <ul>
-                                        <li><a href="./project/location.php">Location</a> </li>
-                                        <li><a href="./project/join.php">Registration</a></li>
-                                        <li><a href="./project/contact.php">Contact</a></li>
-                                </ul>
-                         </li>
+                        <li><a href="./addemail.php">Add User</a></li> |
+                        <li><a href="./removeemail.php">Delete User</a></li> |
+                        <li><a href="./sendemail.php">Send Mail</a></li> |
                 </ul>
 		</div>
 	</div>
