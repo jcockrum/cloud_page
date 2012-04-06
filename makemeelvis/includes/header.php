@@ -9,17 +9,20 @@
 	<script type="text/javascript" src="js/external.js"></script>
 	<link rel="shortcut icon" href="./images/icon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
+        <style type="text/css">
+                body{ background:#f7f7f7 url(../images/bg.gif);}
+        </style>
 </head>
 
 <body id="<?php echo pageid; ?>">
 
 <div id="header"> 
-	<h1 class="site-title"><a href="./">Slave of the Invisible</a></h1>
+	<h1 class="site-title"><a href="./">Elvis Store</a></h1>
 		<div class="nav"><br />
                 <ul>
                         <li><a href="./">Home</a> |
                                 <ul>
-                                        <li><a href="http://184.169.130.102/">Main Home</a></li>
+                                        <li><a href="http://184.169.130.102/">Return Invisible</a></li>
                                 </ul>
                          </li>
                         <li><a href="./addemail.php">Add User</a></li> |
