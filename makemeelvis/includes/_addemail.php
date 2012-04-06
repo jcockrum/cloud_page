@@ -23,9 +23,9 @@
         $last_name = $_POST['lastname'];
         $email = $_POST['email'];
 
-        echo "INSERT INTO '$tbl_name' (first_name, last_name, email)  VALUES ('$first_name', '$last_name', '$email')";
+        echo "INSERT INTO $tbl_name (first_name, last_name, email)  VALUES ('$first_name', '$last_name', '$email')";
 
-        $query = "INSERT INTO '$tbl_name' (first_name, last_name, email)  VALUES ('$first_name', '$last_name', '$email')";
+        $query = "INSERT INTO $tbl_name (first_name, last_name, email)  VALUES ('$first_name', '$last_name', '$email')";
         mysqli_query($query) or die('Error querying database.');
         
         echo 'Customer added.';
