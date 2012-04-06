@@ -4,7 +4,7 @@
 
 <?php define("pageid","Added User"); ?>
 
-<?php include('includes/header.php'); ?> 
+<?php include('header.php'); ?> 
 
 <?php
 	// var's Defintion:
@@ -33,4 +33,4 @@
         mysqli_close($dbc);
 ?>
 
-<?php include('includes/footer.php'); ?>
+<?php include('footer.php'); ?>
