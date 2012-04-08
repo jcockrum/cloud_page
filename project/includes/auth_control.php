@@ -36,6 +36,7 @@
  	{ // set session username then redirect
 		$_SESSION['username']= $_POST[fname] . " " . $_POST[lname];
                 $_SESSION['email']= $_POST[email] ;
+                var_dump($result);
 		header("location: ../appointments.php");
 	} else {header("location: ../_php_fail.php");}
 	ob_end_flush();

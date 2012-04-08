@@ -18,9 +18,9 @@
                 <input type="text" name="email" id="email" />
                 <br />
                 <label>Password </label>
-                <input type="text" name="password" id="password" />
+                <input type="password" name="password" id="password" />
                 <br />
-                <button id="login_submit" name="commit" type="submit" value="Sign In">Sign-in</button>
+                <button id="login_submit" name="commit" type="submit" value="Log In">Log In</button>
                 <div class="spacer"></div>
                 </form>
         </div>

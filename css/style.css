@@ -55,24 +55,15 @@ div.rightcontent{ margin-left:240px; padding:1em; }
 .clear{clear:both}
 
 .nav,{ font-size:16; text-shadow:1px 1px 1px #ccc}
-
 .nav ul, .nav ul li{ display:inline; margin:0; padding:0; list-style:none}
-
 .nav ul li{position:relative}
-
 .nav ul li a{ display:inline-block; font-family:georgia; font-size:16px; color:#333; text-decoration:none; text-shadow:1px 1px 1px #ccc; padding-bottom:5px; margin:-2px 0px 0px 0px}
-
 .nav ul li a:hover{ display:inline-block; font-family:georgia; font-size:16px; color:#666; text-decoration:none; text-shadow:1px 1px 1px #ccc
 margin:-2px 0px 0px 0px}
-
 .nav li ul{ display:none; position:absolute; top:23px; left:0px}
-
 .nav ul li:hover ul{display:inline-block}
-
 .nav ul ul, .nav ul li:hover ul ul, .nav ul ul li:hover ul ul{display:none}
-
 .nav ul li:hover ul, .nav ul ul li:hover ul, .nav ul ul ul li:hover ul{display:block}
-
 .nav ul li:hover ul li a, .nav ul ul li:hover ul li a, .nav ul ul ul li:hover ul li a{ background:#fff; border:#ccc 1px solid; margin-top:1px}
 
 html>/**/body .nav ul li:hover ul li a, .nav ul ul li:hover ul li a, .nav ul ul ul li:hover ul li a{ background:#fff; border:#ccc 1px solid; margin-top:-1px}
@@ -85,8 +76,13 @@ html>/**/body .nav ul li:hover ul li a, .nav ul ul li:hover ul li a, .nav ul ul 
 
 /* forms.css */
 p, h1, form, button{border:0; margin:0; padding:0;}
+.reg,{ font-size:16;}
 .spacer{clear:both; height:1px;}
 /* -----------  Form ----------- */
-label  { float: left;  text-align: right; width: 5em;  margin-right: 1em; }
-button {display:block;float:left;clear:both;margin:1em 0 1em 90px;background:#666666 url(img/button.png) no-repeat; text-align:center;}
+.nav label  { float: left;  text-align: right; width: 5em;  margin-right: 1em; }
+.nav button {display:block;float:left;clear:both;margin:1em 0 1em 90px;background:#666666 url(img/button.png) no-repeat;text-align:center;
+       color:#FFFFFF; font-size:14px; font-weight:bold;}
+
+.reg label  { float: left;  text-align: right; width: 10em;  margin-right: 1em; }
+
 
