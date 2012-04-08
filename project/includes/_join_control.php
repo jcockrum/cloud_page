@@ -1,20 +1,37 @@
 <?php
+        session_start();
+        /*    This is the target table:
+        *    +----------+----------------------------+------+-----+------------------+----------------+
+        *    | Field    | Type                       | Null | Key | Default          | Extra          |
+        *    +----------+----------------------------+------+-----+------------------+----------------+
+        *    | IID      | int(255) unsigned zerofill | NO   | PRI | NULL             | auto_increment |
+        *    | Role     | varchar(30)                | NO   |     | Customer         |                |
+        *    | FName    | varchar(20)                | NO   |     | NULL             |                |
+        *    | LName    | varchar(30)                | NO   |     | NULL             |                |
+        *    | PhNumber | varchar(12)                | YES  |     | 555-555-5555     |                |
+        *    | Email    | varchar(60)                | NO   |     | Name@address.com |                |
+        *    | PassWd   | varchar(16)                | NO   |     | NULL             |                |
+        *    +----------+----------------------------+------+-----+------------------+----------------+
+        */
+
 	// var's Defintion:
 	$host		="127.0.0.1"; 	// Host name
 	$db_usr		="root"; 	// Mysql username
 	$db_pwd		="1q2w3e4r"; 	// Mysql password
-	$db_name	="Project"; 	// Database name
+	$db_name	="project"; 	// Database name
 	$tbl_name	="Identities"; 	// Table name
 	
 	// Connect to server/db:
 	mysql_connect("$host", "$db_usr", "$db_pwd")or die("cannot connect to " . $host);
-	//echo "connected <br />";
+        echo "connected <br />";
 	mysql_select_db("$db_name")or die("cannot connect to database " . $db_name);
-	//echo "DB'ed <br />";
+	echo "DB'ed <br />";
 	//Insert into DB
-	//echo "inserting :" . $_POST[role] . ',' . $_POST[fname] . ',' . $_POST[lname] . ',' . $_POST[phnum] . ',' . $_POST[email] . ',' . $_POST[add_1] . ',' . $_POST[add_2] . ',' . $_POST[city] . ',' . $_POST[state] . ',' . $_POST[zcode];
-
-	mysql_query("INSERT INTO Identities(Role,FName,LName,PhNumber,Email,Add_1,Add_2,City,State,Zip_Code) VALUES ('$_POST[role]','$_POST[fname]','$_POST[lname]','$_POST[phnum]','$_POST[email]','$_POST[add_1]','$_POST[add_2]','$_POST[city]','$_POST[state]','$_POST[zcode]');")or die("<br />failed <br />");
-	//echo "Passed <br />";
+        mysql_query("INSERT INTO Identities(FName, LName, PhNumber, Email,PassWd) 
+                     VALUES ('$_POST[fname]','$_POST[lname]','$_POST[phnum]','$_POST[email]','$_POST[password]');")
+                or die("<br />failed <br />");
+        
+        $_SESSION['username']= $_POST[fname] . " " . $_POST[lname];
+        $_SESSION['email']= $_POST[email] ;
 	header("location: ../_php_success.php");
 ?>

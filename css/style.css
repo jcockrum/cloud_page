@@ -1,6 +1,6 @@
 body{ background:#f7f7f7 url(../images/bg.gif); padding:0; border:0; margin:40px 0 40px 0; overflow:auto}
 
-body, div, p, input, textarea{ font-family:arial; font-size:14px; color:#666; line-height:20px}
+body, div, p, input, textarea, table{ font-family:arial; font-size:14px; color:#666; line-height:20px}
 
 a, a:active, a:visited, a:link{ font-family:georgia; font-size:14px; color:#0099ff; text-decoration:none}
 
@@ -44,29 +44,17 @@ input[type=submit]{cursor:pointer}
 div.leftcontent{ float:left; width:220px; margin:0; padding:1em; }
 div.rightcontent{ margin-left:240px; padding:1em; }
 
-
 .left{text-align:left}
-
 .right{text-align:right}
-
 .center{text-align:center}
-
 .justify{text-align:justify}
-
 .floatleft{float:left}
-
 .floatright{float:right}
-
 .clearleft{clear:left}
-
 .clearright{clear:right}
-
 .clear{clear:both}
 
-
-
-
-.nav{ font-size:16; text-shadow:1px 1px 1px #ccc}
+.nav,{ font-size:16; text-shadow:1px 1px 1px #ccc}
 
 .nav ul, .nav ul li{ display:inline; margin:0; padding:0; list-style:none}
 
@@ -90,9 +78,15 @@ margin:-2px 0px 0px 0px}
 html>/**/body .nav ul li:hover ul li a, .nav ul ul li:hover ul li a, .nav ul ul ul li:hover ul li a{ background:#fff; border:#ccc 1px solid; margin-top:-1px}
 
 .nav ul li:hover ul li a{ width:150px; padding:5px}
-
 .nav ul ul li:hover ul li a{ width:145px; padding:5px 5px 5px 10px}
-
 .nav ul ul ul li:hover ul li a{ width:140px; padding:5px 5px 5px 15px}
-
 .none, .name2{display:none}
+
+
+/* forms.css */
+p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+/* -----------  Form ----------- */
+label  { float: left;  text-align: right; width: 5em;  margin-right: 1em; }
+button {display:block;float:left;clear:both;margin:1em 0 1em 90px;background:#666666 url(img/button.png) no-repeat; text-align:center;}
+

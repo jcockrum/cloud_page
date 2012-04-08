@@ -4,5 +4,5 @@
 <?php define("pageid","success"); ?>
 <?php include('./includes/_header.php'); ?> 
 <h2 class="h2top"><?php echo title; ?></h2>
-<p>Thank you.</p>
+<?php echo "<p>Thank you " . $_SESSION['username'] . ", You are now Loged in.";?>
 <?php include('./includes/_footer.php'); ?>

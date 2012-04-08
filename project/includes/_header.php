@@ -2,24 +2,16 @@
 
 <head>
 	<?php   session_start();
-		$usr = $_SESSION['username'];
-		
 		if(isset($_SESSION['views']))
 		    $_SESSION['views'] = $_SESSION['views']+ 1;
 		else
 		    $_SESSION['views'] = 1;
-		/*
-		echo "begin debug=-=-=-=-=-=-=-=-=";
-		echo "<br />"; 
+		// debug info
+                $usr = $_SESSION['email'];
+		echo "begin debug=-=-=-=-=-=-=-=-=<br />";
 		print_r($_SESSION);
-		echo "<br />"; 
-		echo " usr is '" . $usr . "'";
-		echo "<br />"; 
-		echo "session username  is '" . $_SESSION['username'] . "'";
-		echo "<br />"; 
-		echo "end debug=-=-=-=-=-=-=-=-=-=";
-		echo "<br />"; 	
-		*/	
+		echo "<br />end debug=-=-=-=-=-=-=-=-=-=<br />";	
+			
 	?>
 	<title><?php echo title; ?> | A Plus Auto and Truck Repair</title>
 	<meta name="description" content="<?php echo description; ?>" />

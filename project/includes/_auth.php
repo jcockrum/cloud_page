@@ -8,14 +8,23 @@
                  </li>
 		<li><a href="./location.php">Location</a> |</li>
 		<li><a href="./join.php">Registration</a> |</li>			
-		<!--<li><a href="./appointment.php">Make An Appointment</a> |</li> -->
+		<!--<li><a href="./appointments.php">Make An Appointment</a> |</li> -->
 		<li><a href="./contact.php">Contact</a></li>
 	</ul>
+        <div class=floatright>
+                <form id="_auth" name="authentication" action="./includes/auth_control.php" method="post">
+                
+                <label>Email </label>
+                <input type="text" name="email" id="email" />
+                <br />
+                <label>Password </label>
+                <input type="text" name="password" id="password" />
+                <br />
+                <button id="login_submit" name="commit" type="submit" value="Sign In">Sign-in</button>
+                <div class="spacer"></div>
+                </form>
+        </div>
+
 </div>
 
-<div class=floatright>
-	<!--<form action="./includes/auth_control.php" method="post"> -->
-	<!--Username:<input type="text" name="username" id="username"><br /> -->
-	<!--Password:<input type="password" name="password" id="password"><br /> -->
-	<!--<input type="submit" value="Submit" /><br />-->
-</div>
+

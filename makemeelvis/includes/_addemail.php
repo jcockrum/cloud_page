@@ -23,7 +23,7 @@
         $last_name = $_POST['lastname'];
         $email = $_POST['email'];
 
-        echo "INSERT INTO $tbl_name (first_name, last_name, email)  VALUES ('$_POST['firstname']', '$_POST['lastname']', '$_POST['email']'); <br />";
+        echo "INSERT INTO $tbl_name (first_name, last_name, email)  VALUES ('$first_name', '$last_name', '$email'); <br />";
 
        
         mysqli_query( "INSERT INTO $tbl_name (first_name, last_name, email)  VALUES ('$first_name', '$last_name', '$email');") 
@@ -33,4 +33,4 @@
         mysqli_close($dbc);
 ?>
 
-<?php include('footer.php'); ?>
+<?php include('includes/footer.php'); ?>
