@@ -21,6 +21,8 @@ session_start();
 	$tbl_name	="Appointments"; 	// Table name
         $usr            = $_SESSION['email'];	
 
+
+	echo "<h1><strong>Page Under Construction</strong></h1> ";
 	// Connect to server/db:
 	mysql_connect("$host", "$db_usr", "$db_pwd")or die("cannot connect to " . $host);
         echo "connected <br />";
