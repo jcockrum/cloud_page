@@ -1,6 +1,6 @@
 <h2 class="h2top"><?php echo title; ?></h2>
 <p> Please provide us with the following information and we will take care of your vehicle </p>
-<form action="./includes/_waitingfor_content.php" method="post">
+<form action="./includes/appoinments_control.php" method="post">
  
  <div class="field">
     <label for="car">Car:</label><br />
