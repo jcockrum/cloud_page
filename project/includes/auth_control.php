@@ -32,12 +32,17 @@
 	$return_array = mysql_fetch_array($result);
 	// Count the row(s): if 1 row should be valid
 	$count=mysql_num_rows($result);
+        print_r(get_defined_vars($result));
+        // print_r($result);
+        echo "<br />";
+
+
 	if($count==1) 
  	{ // set session username then redirect
 		$_SESSION['username']= $_POST[fname] . " " . $_POST[lname];
                 $_SESSION['email']= $_POST[email] ;
-                var_dump($result);
-		header("location: ../appointments.php");
+                echo var_dump($result);
+		//header("location: ../appointments.php");
 	} else {header("location: ../_php_fail.php");}
 	ob_end_flush();
 ?>
