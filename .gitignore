@@ -24,6 +24,7 @@
 ######################
 *.log
 *.sqlite
+*~
 
 # OS generated files #
 ######################
@@ -31,6 +32,7 @@
 ehthumbs.db
 Icon?
 Thumbs.db
+
 
 # Specific for this  #
 ######################
