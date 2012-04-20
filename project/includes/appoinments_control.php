@@ -9,15 +9,19 @@
 session_start();
 	ob_start();
         /*
-        +------------+----------------------------+------+-----+---------+----------------+
-        | Field      | Type                       | Null | Key | Default | Extra          |
-        +------------+----------------------------+------+-----+---------+----------------+
-        | InvoiceID  | int(255) unsigned zerofill | NO   | PRI | NULL    | auto_increment |
-        | Created_by | int(255) unsigned zerofill | NO   | MUL | NULL    |                |
-        | Car        | int(255) unsigned zerofill | NO   | MUL | NULL    |                |
-        | Job        | int(255) unsigned zerofill | NO   | MUL | NULL    |                |
-        | Date       | int(255) unsigned zerofill | NO   | MUL | NULL    |                |
-        +------------+----------------------------+------+-----+---------+----------------+
+       +-----------------+---------------------------+------+-----+---------+----------------+
+       | Field           | Type                      | Null | Key | Default | Extra          |
+       +-----------------+---------------------------+------+-----+---------+----------------+
+       | InvoiceID       | int(15) unsigned zerofill | NO   | PRI | NULL    | auto_increment |
+       | Created_by      | int(6) unsigned zerofill  | NO   | UNI | NULL    |                |
+       | Cal_Date        | int(15) unsigned zerofill | NO   | UNI | NULL    |                |
+       | Job_description | text                      | NO   |     | NULL    |                |
+       | Car_make        | varchar(30)               | NO   |     | NULL    |                |
+       | Car_model       | varchar(30)               | NO   |     | NULL    |                |
+       | Car_powertrain  | varchar(20)               | NO   |     | NULL    |                |
+       | Car_year        | varchar(4)                | NO   |     | NULL    |                |
+       | Car_miles       | varchar(7)                | NO   |     | NULL    |                |
+       +-----------------+---------------------------+------+-----+---------+----------------+
         */
 
         // var's Defintion:

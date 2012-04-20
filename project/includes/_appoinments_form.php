@@ -37,4 +37,5 @@
   </div>
 </form>
 
-	/* I used the _join_form.php page as a reference for the div class and submit button */ 
+
+	<!-- I used the _join_form.php page as a reference for the div class and submit button  -->
