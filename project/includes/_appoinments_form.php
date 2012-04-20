@@ -3,16 +3,31 @@
 <form action="./includes/_waitingfor_content.php" method="post">
  
  <div class="field">
-    <label for="car">Car:</label><br />
-    <input id="car" name="car" size="30" type="text" />
+    <label for="cal_date">Date:</label><br />
+    <input id="cal_date" name="cal_date" size="30" type="text" />
   </div>
   <div class="field">
-    <label for="service">Service Request:</label><br />
-    <input id="service name="service" size="30" type="text" />
+    <label for="job_description">Service Request:</label><br />
+    <input id="job_description" name="job_description" size="30" type="text" />
   </div>
   <div class="field">
-    <label for="date">Date:</label><br />
-    <input id="date" name="date" size="30" type="text" />
+    <label for="car_make">Make:</label><br />
+    <input id="car_make" name="car_make" size="30" type="text" />
+  </div>
+  
+   <div class="field">
+    <label for="car_model">Model:</label><br />
+    <input id="car_model" name="car_model" size="30" type="text" />
+  </div>
+  
+   <div class="field">
+    <label for="car_powertrain">Engine Size:</label><br />
+    <input id="car_powertrain" name="car_powertrain" size="30" type="text" />
+  </div>
+  
+   <div class="field">
+    <label for="car_year">Year:</label><br />
+    <input id="car_year" name="car_year" size="30" type="text" />
   </div>
   
   <div class="actions">
