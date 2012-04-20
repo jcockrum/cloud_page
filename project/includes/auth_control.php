@@ -20,29 +20,32 @@
 	$password = mysql_real_escape_string($password);
 
 	// test the username against the DB
-	$sql="SELECT * FROM $tbl_name WHERE Email='$username' and PassWd='$password'";
+	$sql="SELECT * FROM $tbl_name WHERE Email='$username' AND PassWd='$password'";
 	$result=mysql_query($sql);
 
 	/*
 	STUFF ADDED BY MATT
-	*/
-	// mysql_query just sets the query, it doesn't fetch any rows back
-	// we must use mysql_fetch_array to return stuff
-
+	        // mysql_query just sets the query, it doesn't fetch any rows back
+	        // we must use mysql_fetch_array to return stuff
+        */
 	$return_array = mysql_fetch_array($result);
 	// Count the row(s): if 1 row should be valid
-	$count=mysql_num_rows($result);
-        print_r(get_defined_vars($result));
-        // print_r($result);
-        echo "<br />";
+	$count=mysql_num_rows($result);       
+       
+
+       // debuging
+        echo "<br />--------------------------<br />";
+        print_r(get_defined_vars());
+        echo "<br />--------------------------<br />";
+
 
 
 	if($count==1) 
  	{ // set session username then redirect
-		$_SESSION['username']= $_POST[fname] . " " . $_POST[lname];
+		$_SESSION['username']= $_POST[fname];
                 $_SESSION['email']= $_POST[email] ;
-                echo var_dump($result);
 		//header("location: ../appointments.php");
 	} else {header("location: ../_php_fail.php");}
 	ob_end_flush();
+        mysql_free_result($result);
 ?>
