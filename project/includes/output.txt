@@ -1,0 +1,52 @@
+Array 
+( 
+        [GLOBALS] => Array 
+                ( 
+                        [GLOBALS] => Array *RECURSION* 
+                        [_POST] => Array ( [email] => JohnCockrum1@Yahoo.com [password] => 1q2w3e4r [commit] => Log In) 
+                        [_GET] => Array () 
+                        [_COOKIE] => Array ( [PHPSESSID] => cb3dnt0j53cmhdsgdjnbhla5e7 ) 
+                        [_FILES] => Array () 
+                        [_SESSION] => Array ( [views] => 2 [username] => [email] => JohnCockrum1@Yahoo.com) 
+                        [host] => 127.0.0.1 
+                        [db_usr] => root 
+                        [db_pwd] => 1q2w3e4r 
+                        [db_name] => project 
+                        [tbl_name] => Identities 
+                        [username] => JohnCockrum1@Yahoo.com 
+                        [password] => 1q2w3e4r 
+                                [sql] => SELECT * FROM Identities WHERE Email='JohnCockrum1@Yahoo.com' and PassWd='1q2w3e4r' 
+                                [result] => Resource id #3 [return_array] => Array 
+                                ( 
+                                        [0] => 000001                   [IID] => 000001 
+                                        [1] => Customer                 [Role] => Customer 
+                                        [2] => John                     [FName] => John 
+                                        [3] => Cockrum                  [LName] => Cockrum 
+                                        [4] => 916-367-1296             [PhNumber] => 916-367-1296 
+                                        [5] => JohnCockrum1@Yahoo.com   [Email] => JohnCockrum1@Yahoo.com 
+                                        [6] => 1q2w3e4r                 [PassWd] => 1q2w3e4r
+                                ) 
+                        [count] => 1
+                ) 
+        [_POST] => Array ( [email] => JohnCockrum1@Yahoo.com [password] => 1q2w3e4r [commit] => Log In) 
+        [_GET] => Array () 
+        [_COOKIE] => Array ( [PHPSESSID] => cb3dnt0j53cmhdsgdjnbhla5e7) 
+        [_FILES] => Array () 
+        [_SESSION] => Array ( [views] => 2 [username] => [email] => JohnCockrum1@Yahoo.com) 
+        [host] => 127.0.0.1  [db_usr] => root [db_pwd] => 1q2w3e4r 
+        [db_name] => project [tbl_name] => Identities 
+        [username] => JohnCockrum1@Yahoo.com [password] => 1q2w3e4r 
+        [sql] => SELECT * FROM Identities WHERE Email='JohnCockrum1@Yahoo.com' and PassWd='1q2w3e4r' 
+        [result] => Resource id #3 [return_array] => Array 
+                ( 
+                        [0] => 000001 [IID] => 000001 
+                        [1] => Customer [Role] => Customer  
+                        [2] => John [FName] => John 
+                        [3] => Cockrum [LName] => Cockrum 
+                        [4] => 916-367-1296 [PhNumber] => 916-367-1296 
+                        [5] => JohnCockrum1@Yahoo.com [Email] => JohnCockrum1@Yahoo.com 
+                        [6] => 1q2w3e4r [PassWd] => 1q2w3e4r
+                ) 
+        [count] => 1 
+)
+resource(3) of type (mysql result) 

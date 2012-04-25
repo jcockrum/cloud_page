@@ -1,51 +1,55 @@
 <?php
 	session_start();
-	ob_start();	
-	// var's Defintion:
-	$host		="127.0.0.1"; 	// Host name
-	$db_usr		="root"; 	// Mysql username
-	$db_pwd		="1q2w3e4r"; 	// Mysql password
-	$db_name	="project"; 	// Database name
-	$tbl_name	="Identities"; 	// Table name
-	// Connect to server/db:
-	mysql_connect("$host", "$db_usr", "$db_pwd")or die("cannot connect to " . $host);
-	mysql_select_db("$db_name")or die("cannot select DB");
-	// get the already entered $username and $password
-	$username=$_POST['email'];
-	$password=$_POST['password'];
-	// MySQL injection protection:
-	$username = stripslashes($username);
-	$password = stripslashes($password);
-	$username = mysql_real_escape_string($username);
-	$password = mysql_real_escape_string($password);
+	ob_start();
+        echo "Stage 0 <br /> Current Session-----------<br />"; //debuging
+        print_r($_SESSION);
+        echo "<br />--------------------------<br />";        
 
-	// test the username against the DB
-	$sql="SELECT * FROM $tbl_name WHERE Email='$username' AND PassWd='$password'";
-	$result=mysql_query($sql);
+        // var's Defintion:
+        $_SESSION['err_msg']    ="";            // Clear error messgae
+	$host		        ="127.0.0.1"; 	// Host name
+	$db_usr		        ="root"; 	// Mysql username
+	$db_pwd		        ="1q2w3e4r"; 	// Mysql password
+	$db_name	        ="project"; 	// Database name
+	$tbl_name	        ="Identities"; 	// Table name	
 
-	/*
-	STUFF ADDED BY MATT
-	        // mysql_query just sets the query, it doesn't fetch any rows back
-	        // we must use mysql_fetch_array to return stuff
-        */
-	$return_array = mysql_fetch_array($result);
-	// Count the row(s): if 1 row should be valid
-	$count=mysql_num_rows($result);       
-       
+        if (!isset($_SESSION['username'])) 
+        {       
+        echo "<p>Stage 1"; //debuging      
+                // Connect to the database
+                $dbc = mysqli_connect($host, $db_usr, $db_pwd, $db_name) or die("connection failure with " . $host . " -> " . $dbname);
+                echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />"; //debuging
 
-       // debuging
-        echo "<br />--------------------------<br />";
-        print_r(get_defined_vars());
-        echo "<br />--------------------------<br />";
-
-
-
-	if($count==1) 
- 	{ // set session username then redirect
-		$_SESSION['username']= $_POST[fname];
-                $_SESSION['email']= $_POST[email] ;
-		//header("location: ../appointments.php");
-	} else {header("location: ../_php_fail.php");}
-	ob_end_flush();
-        mysql_free_result($result);
+                // Grab and clean form data
+                $username = stripslashes(trim($_POST['email']));
+                $password = stripslashes(trim($_POST['password']));      
+                $clean_user = mysqli_real_escape_string($dbc, $username);
+                $clean_pass = mysqli_real_escape_string($dbc, $password);
+                echo "<p>Cleaned User / Pass: " . $clean_user . " || " . $clean_pass . "</p><br />"; //debuging
+                if (!empty($clean_user) && !empty($clean_pass)) 
+                {       // Look up the username and password in the database
+                        $query = "SELECT * FROM $tbl_name WHERE Email='$clean_user' AND PassWd='$clean_pass'";
+                        $data = mysqli_query($dbc, $query) or die("<p>Query failure:" . $query . " </p><br />");
+                        echo "<p>Sending query: " . $query . " </p><br />"; //debuging
+                        if (mysqli_num_rows($data) == 1) 
+                        {       // Suscess
+                                $row = mysqli_fetch_array($data); //used to write userinfo into the session/cookie
+                                $_SESSION['UID'] = $row['IID'];
+                                $_SESSION['nicename'] = $row['FName'];
+                                $_SESSION['username'] = $row['Email'];
+                                setcookie('username', $row['Email'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
+                                echo "<br />new session---------------<br />"; // debuging
+                                print_r($_SESSION);
+                                echo "<br />--------------------------<br />";
+                                header("location: ../appointments.php"); // comment this line to activate debugging
+                       } else { 
+                                $_SESSION['err_msg'] = 'You must enter a valid username and password to log in.';  
+                                header("location: ../_php_fail.php");
+                       }
+                } else { 
+                        $_SESSION['err_msg'] = 'Sorry, you must enter your username and password to log in.';  
+                        header("location: ../_php_fail.php");
+                       }
+        }
+        ob_end_flush();
 ?>

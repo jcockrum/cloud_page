@@ -2,16 +2,13 @@
 
 <head>
 	<?php   session_start();
-		if(isset($_SESSION['views']))
-		    $_SESSION['views'] = $_SESSION['views']+ 1;
-		else
-		    $_SESSION['views'] = 1;
-		// debug info
-                $usr = $_SESSION['email'];
+                // set view counter
+		$_SESSION['views'] = (isset($_SESSION['views'])) ? $_SESSION['views']+ 1 : 1;
+
+                // debug info
 		echo "begin debug=-=-=-=-=-=-=-=-=<br />";
 		print_r($_SESSION);
-		echo "<br />end debug=-=-=-=-=-=-=-=-=-=<br />";	
-			
+		echo "<br />end debug=-=-=-=-=-=-=-=-=-=<br />";			
 	?>
 	<title><?php echo title; ?> | A Plus Auto and Truck Repair</title>
 	<meta name="description" content="<?php echo description; ?>" />
@@ -26,7 +23,7 @@
 <div id="header"> 
 	<img src="./images/header_siteheader.jpg" alt="A Plus Auto and Truck Repair" /> 
 	<?php 
-		if($usr) {include('_authout.php');} 
+		if(isset($_SESSION['username'])) {include('_authout.php');} 
 		else {include('_auth.php');} 
 	?> 
 	<br class="clear" />
