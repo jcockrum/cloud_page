@@ -2,9 +2,8 @@
 	<br />
 	<ul>
 		<li><a href="./">Main</a> |</li>
-		<li><a href="./location.php">Location</a> |</li>
-		<!--<li><a href="./join.php">Registration</a> |</li> -->			
-		<li><a href="./appointments.php">Make An Appointment</a> |</li>
+		<li><a href="./location.php">Location</a> |</li>			
+		<li><a href="./appointments.php">Make An Appointment</a> </li>
 	</ul>
 </div>
 

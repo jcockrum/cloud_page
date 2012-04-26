@@ -1,16 +1,15 @@
 <?php
 	session_start();
 	ob_start();
-
         echo "Stage 0 <br /> Current Session-----------<br />"; //debuging
         print_r($_SESSION);
         echo "<br />--------------------------<br />";        
 
-        function clean($dbc,$in)
+        function cleaner($in)
         {
                 $step = stripslashes(trim($in));     
                 $clean = mysqli_real_escape_string($dbc, $step);
-                return $clean;
+                return $clean
         }
 
         // var's Defintion:
@@ -22,16 +21,25 @@
 	$tbl_name	        ="Identities"; 	// Table name	
 
         if (!isset($_SESSION['username'])) 
-        {           
+        {       
+        echo "<p>Stage 1"; //debuging      
                 // Connect to the database
                 $dbc = mysqli_connect($host, $db_usr, $db_pwd, $db_name) or die("connection failure with " . $host . " -> " . $dbname);
                 echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />"; //debuging
 
                 // Grab and clean form data
-                $clean_user = clean($dbc, $_POST['email']);                
-                $clean_pass = clean($dbc, $_POST['password']);
+                $username = stripslashes(trim($_POST['email']));
 
-                echo "<p>Cleaned User / Pass: [" . $clean_user . " / " . $clean_pass . "]</p><br />"; //debuging
+                $password = stripslashes(trim($_POST['password']));      
+
+                $clean_user = mysqli_real_escape_string($dbc, $username);
+
+                $clean_pass = mysqli_real_escape_string($dbc, $password);
+
+
+
+
+                echo "<p>Cleaned User / Pass: " . $clean_user . " || " . $clean_pass . "</p><br />"; //debuging
                 if (!empty($clean_user) && !empty($clean_pass)) 
                 {       // Look up the username and password in the database
                         $query = "SELECT * FROM $tbl_name WHERE Email='$clean_user' AND PassWd='$clean_pass'";
@@ -41,7 +49,6 @@
                         {       // Suscess
                                 $row = mysqli_fetch_array($data); //used to write userinfo into the session/cookie
                                 $_SESSION['UID'] = $row['IID'];
-                                $_SESSION['role']  =  $row['Role'];                             
                                 $_SESSION['nicename'] = $row['FName'];
                                 $_SESSION['username'] = $row['Email'];
                                 setcookie('username', $row['Email'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
@@ -51,11 +58,11 @@
                                 header("location: ../appointments.php"); // comment this line to activate debugging
                        } else { 
                                 $_SESSION['err_msg'] = 'You must enter a valid username and password to log in.';  
-                                header("location: ../_php_fail.php");  // comment this line to activate debugging
+                                header("location: ../_php_fail.php");
                        }
                 } else { 
                         $_SESSION['err_msg'] = 'Sorry, you must enter your username and password to log in.';  
-                        header("location: ../_php_fail.php"); // comment this line to activate debugging
+                        header("location: ../_php_fail.php");
                        }
         }
         ob_end_flush();

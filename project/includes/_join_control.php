@@ -1,4 +1,5 @@
 <?php
+        // this script needs to be updated to be like auth_control
         session_start();
         /*    This is the target table:
         *    +----------+----------------------------+------+-----+------------------+----------------+

@@ -22,10 +22,7 @@
 <body id="<?php echo pageid; ?>">
 <div id="header"> 
 	<img src="./images/header_siteheader.jpg" alt="A Plus Auto and Truck Repair" /> 
-	<?php 
-		if(isset($_SESSION['username'])) {include('_authout.php');} 
-		else {include('_auth.php');} 
-	?> 
+	<?php (isset($_SESSION['username'])) ? include('_authout.php') : include('_auth.php'); ?> 
 	<br class="clear" />
 </div>
 <div id="content">
