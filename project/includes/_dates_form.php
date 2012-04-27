@@ -1,6 +1,7 @@
-<h2 class="h2top"> <?php echo title; ?></h2>
+<br />
+<h2 class="h2top">Create New Record</h2>
 <div class="reg">
-        <form action="./includes/_dates_control.php" method="post">
+        <form action="./includes/dates_control.php" method="post">
                         <label>Calendar Date: </label>
                         <input type="text" name="cal_date" id="cal_date" />
                         <br />

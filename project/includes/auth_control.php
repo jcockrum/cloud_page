@@ -40,7 +40,7 @@
                         if (mysqli_num_rows($data) == 1) 
                         {       // Suscess
                                 $row = mysqli_fetch_array($data); //used to write userinfo into the session/cookie
-                                $_SESSION['UID'] = $row['IID'];
+                                $_SESSION['iid'] = $row['IID'];
                                 $_SESSION['role']  =  $row['Role'];                             
                                 $_SESSION['nicename'] = $row['FName'];
                                 $_SESSION['username'] = $row['Email'];

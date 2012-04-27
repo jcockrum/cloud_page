@@ -1,3 +1,4 @@
+<?php  session_start(); $_SESSION['pid'] = "suscess"; ?>
 <?php define("title","Successful"); ?>
 <?php define("description","Description of page goes here."); ?>
 <?php define("keywords","a plus auto and truck repair, automotive repair corona, auto repair corona, car repair corona, automotive repair"); ?>

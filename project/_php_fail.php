@@ -1,3 +1,4 @@
+<?php  session_start();  $_SESSION['pid'] = "failed"; ?>
 <?php define("title","Failed"); ?>
 <?php define("pageid","fail"); ?>
 <?php include('./includes/_header.php'); ?> 

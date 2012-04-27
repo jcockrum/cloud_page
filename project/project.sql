@@ -21,18 +21,20 @@ CREATE TABLE IF NOT EXISTS `Identities` (
   `PhNumber` varchar(12) DEFAULT '555-555-5555',
   `Email` varchar(60) NOT NULL DEFAULT 'Name@address.com',
   `PassWd` varchar(16) NOT NULL,
-  PRIMARY KEY (`IID`)
+  PRIMARY KEY (`IID`),
+  UNIQUE KEY `Email` (`Email`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 -- --------------------------------------------------------
 -- Table structure for table `Dates`
 CREATE TABLE IF NOT EXISTS `Dates` (
-  `DID` int(15) unsigned zerofill NOT NULL AUTO_INCREMENT,
-  `Cal_Date` varchar(10) NOT NULL DEFAULT 'MM/DD/YYYY',
+  `DID` int(25) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `Cal_Date` varchar(11) NOT NULL DEFAULT 'MM/DD/YYYY',
   `At_time` varchar(5) NOT NULL DEFAULT '7 AM',
+  `Is_locked` int(1) NOT NULL DEFAULT '0',
   `Created_by` int(6) unsigned zerofill NOT NULL,
   PRIMARY KEY (`DID`),
-  UNIQUE KEY `Created_by` (`Created_by`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+  KEY `Created_by` (`Created_by`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 -- --------------------------------------------------------
 -- Table structure for table `Appointments`
 CREATE TABLE IF NOT EXISTS `Appointments` (
@@ -46,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `Appointments` (
   `Car_year` varchar(4) NOT NULL,
   `Car_miles` varchar(7) NOT NULL,
   PRIMARY KEY (`InvoiceID`),
-  UNIQUE KEY `Created_by` (`Created_by`),
+  KEY `Created_by` (`Created_by`),
   UNIQUE KEY `appt_time` (`Cal_Date`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 -- --------------------------------------------------------
@@ -61,17 +63,4 @@ ALTER TABLE `Appointments`
   ADD CONSTRAINT `Appointments_ibfk_1` FOREIGN KEY (`Created_by`) REFERENCES `Identities` (`IID`);
 
 -- -------------------------------------------------------
--- data for table `Identities`
-INSERT INTO `Identities` ( `Role`, `FName`, `LName`, `PhNumber`, `Email`, `PassWd`) VALUES
-('A', 'John', 'Cockrum', '916-367-1296', 'JohnCockrum1@Yahoo.com', '1q2w3e4r'),
-('A', 'Jennifer ', 'rene', '951555555', 'jrene02@hotmail.com', 'lakers'),
-('A', 'Bob', 'Curry', '9897089999', 'bob@yahoo.com', 'bob'),
-('C', 'Tyrone', 'Slothrop', '555-1212', 'sloth@hotmail.com', 'sloth');
--- data for table `Dates`
-INSERT INTO `Dates` ( `Cal_Date`, `At_time`, `Created_by`) VALUES
-( '0.00010463', '8', 000003);
--- data for table `Appointments`
-INSERT INTO `Appointments` (`Created_by`, `Cal_Date`, `Job_description`, `Car_make`, `Car_model`, `Car_powertrain`, `Car_year`, `Car_miles`) VALUES
-( 000003, 000000000000001, 'Oil change', 'Kia', 'Spectra', '3.6', '2008', '190000');
--- --------------------------------------------------------
 -- Script End
