@@ -6,7 +6,7 @@
         *    | Field    | Type                       | Null | Key | Default          | Extra          |
         *    +----------+----------------------------+------+-----+------------------+----------------+
         *    | IID      | int(255) unsigned zerofill | NO   | PRI | NULL             | auto_increment |
-        *    | Role     | varchar(30)                | NO   |     | Customer         |                |
+        *    | Role     | varchar(1)                 | NO   |     | C                |                |
         *    | FName    | varchar(20)                | NO   |     | NULL             |                |
         *    | LName    | varchar(30)                | NO   |     | NULL             |                |
         *    | PhNumber | varchar(12)                | YES  |     | 555-555-5555     |                |
@@ -28,8 +28,8 @@
 	mysql_select_db("$db_name")or die("cannot connect to database " . $db_name);
 	echo "DB'ed <br />";
 	//Insert into DB
-        mysql_query("INSERT INTO Identities(FName, LName, PhNumber, Email,PassWd) 
-                     VALUES ('$_POST[fname]','$_POST[lname]','$_POST[phnum]','$_POST[email]','$_POST[password]');")
+        mysql_query("INSERT INTO Identities(Role, FName, LName, PhNumber, Email,PassWd) 
+                     VALUES ('C', '$_POST[fname]','$_POST[lname]','$_POST[phnum]','$_POST[email]','$_POST[password]');")
                 or die("<br />failed <br />");
         
         $_SESSION['username']= $_POST[fname] . " " . $_POST[lname];
