@@ -3,8 +3,8 @@
 	<ul>
 		<li><a href="./">Main</a> |</li>
 		<?php 
-                       if ($_SESSION['role']  = "A") {echo '<li><a href="./dates.php">Manage Dates</a> |</li>';} 
-                       else {echo'<li><a href="./location.php">Location/a> |</li>';}
+                       if ($_SESSION['role'] == "A") {echo '<li><a href="./dates.php">Manage Dates</a> |</li>';} 
+                       else {echo'<li><a href="./location.php">Location</a> |</li>';}
                 ?>			
 		<li><a href="./appointments.php">Make An Appointment</a> </li>
 	</ul>

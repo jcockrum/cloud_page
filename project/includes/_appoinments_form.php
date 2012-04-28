@@ -33,7 +33,7 @@
   </div>
   
   <div class="actions">
-    <input id="user_submit" name="commit" type="submit" value="Sign up" />
+    <input id="user_submit" name="commit" type="submit" value="Set Appointment" />
   </div>
 </form>
 
