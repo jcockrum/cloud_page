@@ -31,8 +31,8 @@
                         {       //extract row -- this will make a $row['firstname'] to just a variable $firstname only
                                 extract($row);
                                
-                                $tmp = {$Cal_Date} ; // . " " . {$At_time};
-                                echo " $tmp <br /> " ;  //debuging  
+                                //$tmp = {$Cal_Date} ; // . " " . {$At_time};
+                               //echo " $tmp <br /> " ;  //debuging  
         
                                 
                         }
