@@ -3,8 +3,8 @@
 <form action="./includes/_waitingfor_content.php" method="post">
  
  <div class="field">
-    <label for="cal_date">Date:</label><br />
-    <input id="cal_date" name="cal_date" size="30" type="text" />
+        <label for="Cal_date">Service Date:</label><br />
+        <?php include_once("location: ./drop_down.php"); ?>
   </div>
   
   <div class="field">
