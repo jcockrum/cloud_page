@@ -1,5 +1,6 @@
 <?php
-        // debug info
+        session_start();
+		// debug info
 		echo "begin debug=-=-=-=-=-=-=-=-=<br />";
 		print_r($_SESSION);
 		echo "<br />end debug=-=-=-=-=-=-=-=-=-=<br />";
