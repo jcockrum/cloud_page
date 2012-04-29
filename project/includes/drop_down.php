@@ -1,12 +1,17 @@
 <?php
-        // var's Defintion:
+        // debug info
+		echo "begin debug=-=-=-=-=-=-=-=-=<br />";
+		print_r($_SESSION);
+		echo "<br />end debug=-=-=-=-=-=-=-=-=-=<br />";
+		
+		// var's Defintion:
         $_SESSION['err_msg']    ="";                    // Clear error messgae
 		$host		        	="127.0.0.1"; 	        // Host name
 		$db_usr		        	="root"; 	        	// Mysql username
 		$db_pwd		        	="1q2w3e4r"; 	        // Mysql password
 		$db_name	        	="project"; 	        // Database name
 		$tbl_name	       		="Dates"; 	       	    // Table name	
-
+/*
         if (isset($_SESSION['username'])) 
         {           
                 // Connect to the database
@@ -35,7 +40,7 @@
                 } else {
                         echo "No records found.";
                 }
-				*/ 
+				
                 // Cleanup
                 $data->free();
                 $dbc->close();      
@@ -43,6 +48,7 @@
                 $_SESSION['err_msg'] = 'Sorry, you must be loged in to complete this action.';  
                 // header("location: ../_php_fail.php"); // comment this line to activate debugging
         }
+*/
 
 /* 
 	function dropdown( $name, array $options, $selected=null )
