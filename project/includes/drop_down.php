@@ -42,7 +42,7 @@
                 header("location: ../_php_fail.php"); // comment this line to activate debugging
         }
 
-/* 
+
 	function dropdown( $name, array $options, $selected=null )
 	{
 		/*** begin the select ***/
@@ -79,7 +79,7 @@ echo dropdown( $name, $options, $selected );
 ?>
 </form> 
 
-*/ 
+
 ?> 
 
   
