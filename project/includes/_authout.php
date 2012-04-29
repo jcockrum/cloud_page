@@ -7,6 +7,7 @@
                        else {echo'<li><a href="./location.php">Location</a> |</li>';}
                 ?>			
 		<li><a href="./appointments.php">Make An Appointment</a> </li>
+		<li><a href="drop_down.php">Make An Appointment</a> </li>
 	</ul>
 </div>
 
