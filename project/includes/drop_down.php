@@ -47,7 +47,7 @@
                 $dbc->close();      
         } else { 
                 $_SESSION['err_msg'] = 'Sorry, you must be loged in to complete this action.';  
-                // header("location: ../_php_fail.php"); // comment this line to activate debugging
+                 header("location: ../_php_fail.php"); // comment this line to activate debugging
         }
 
 
