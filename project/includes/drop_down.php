@@ -23,7 +23,7 @@
                 echo "<p>Sending query: " . $query . " </p><br />"; //debuging
                 //get number of rows returned
                 $num_datas = $data->num_rows;
-                /* 
+                
 				if( $num_datas > 0)//will not make a table without records
                 { 
                    
@@ -41,7 +41,7 @@
                 } else {
                         echo "No records found.";
                 }
-				*/
+				
                 // Cleanup
                 $data->free();
                 $dbc->close();      
