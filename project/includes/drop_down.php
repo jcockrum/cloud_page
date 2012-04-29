@@ -75,11 +75,8 @@
 		return $dropdown;
 	} 
 
-?> 
-<form>
 
-<?php
-
+echo "<form>"; 
 
 $name = 'my_dropdown';
 $options = array( );
@@ -87,10 +84,10 @@ $selected = 1;
 
 echo dropdown( $name, $options, $selected );
 
- 
+echo "</form>" ;
 
 ?>
-</form> 
+
 
 
 
