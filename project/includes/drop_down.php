@@ -26,22 +26,14 @@
                 
 				if( $num_datas > 0)//will not make a table without records
                 { 
-                   
-					$options = array(  );
-					foreach ($options as $data->fetch_assoc() ) 
-					{
-						//extract row -- this will make a $row['firstname'] to just a variable $firstname only
-                                extract($options);
-                                $tmp =  " {$Cal_Date} {$At_time} <br /> " ;  //debuging  
-								echo $tmp ; 
-					}
-				   
-				   
+					$options = array(  ); 
+					$cntr = 0 ; 
 					while( $row = $data->fetch_assoc() ) //loop to show each records
-                        {       //extract row -- this will make a $row['firstname'] to just a variable $firstname only
-                                extract($row);
-                               // $tmp =  " {$Cal_Date} {$At_time} <br /> " ;  //debuging  
-								//echo $tmp ; 
+                        {   //extract row -- this will make a $row['firstname'] to just a variable $firstname only
+                            extract($row);
+                            $tmp =  " {$Cal_Date} {$At_time} <br /> " ;  //debuging  
+							$options[$cntr++] = $tmp; 
+							echo $tmp ; 
 						}
 
 				   
