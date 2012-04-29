@@ -17,10 +17,11 @@
                 echo "<p>Sending query: " . $query . " </p><br />"; //debuging
                 //get number of rows returned
                 $num_datas = $data->num_rows;
-                if( $num_datas > 0)//will not make a table without records
+                /* 
+				if( $num_datas > 0)//will not make a table without records
                 { 
                    
-				while( $row = $data->fetch_assoc() ) //loop to show each records
+					while( $row = $data->fetch_assoc() ) //loop to show each records
                         {       //extract row -- this will make a $row['firstname'] to just a variable $firstname only
                                 extract($row);
                                
@@ -34,6 +35,7 @@
                 } else {
                         echo "No records found.";
                 }
+				*/ 
                 // Cleanup
                 $data->free();
                 $dbc->close();      
