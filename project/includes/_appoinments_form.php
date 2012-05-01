@@ -4,7 +4,7 @@
  
  <div class="field">
         <label for="Cal_date">Service Date:</label><br />
-        <?php<input action=include_once(".includes/drop_down.php"); ?> 
+        <?php include_once("location: ./drop_down.php"); ?>
   </div>
   
   <div class="field">
