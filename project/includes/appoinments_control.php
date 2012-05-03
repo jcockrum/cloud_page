@@ -52,7 +52,7 @@
         }
 
         //set error handler
-        set_error_handler("customError",E_USER_WARNING)
+        set_error_handler("customError",E_USER_WARNING);
         
 //Main Code
         if (isset($_SESSION['username'])) 
@@ -70,9 +70,8 @@
 	        $clean_year = clean($dbc, $_POST['year']); 
 	        $clean_miles = clean($dbc, $_POST['miles']); 
 
-            echo "<p>Cleaned vars: [" . $iid . ", " . $cal_date . ", " . $clean_job . ", " . $clean_make . ", " . 
-                    $clean_model . ", " . $clean_pt . ", " . $clean_year . ", " . $clean_miles . "]</p><br />"; //debuging
-        
+            echo "<p>Cleaned vars: [" . $iid . ", " . $cal_date . ", " . $clean_job . ", " . $clean_make . ", " . $clean_model . ", " . $clean_pt . ", " . $clean_year . ", " . $clean_miles . "]</p><br />"; //debuging
+
             if (!empty($clean_job) && !empty($clean_make)&& !empty($clean_model)&& !empty($clean_pt)&& !empty($clean_year)&& !empty($clean_miles)) 
             {       // Insert into the DB
                 $query = "INSERT INTO 
@@ -86,7 +85,7 @@
                 $_SESSION['err_msg'] = 'All fields must be filled in.';  
                 header("location: ../_php_fail.php");  // comment this line to activate debugging
             }
-            */ 
+            
         } else { 
             $_SESSION['err_msg'] = 'Sorry, you must be loged in to complete this action.';  
             header("location: ../_php_fail.php"); // comment this line to activate debugging
