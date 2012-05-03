@@ -17,11 +17,11 @@
 
 	session_start();
         
-        /*// debuging block        
+        // debuging block        
         echo "Stage 0 <br /> Current Session-----------<br />";
         print_r($_SESSION);
         echo "<br />--------------------------<br />";        
-        print_r($_POST); */
+        print_r($_POST); 
 
         function clean($dbc,$in)
         {
@@ -46,19 +46,13 @@
         // var's Defintion:
         $_SESSION['err_msg']    ="";                    // Clear error messgae
         $iid                    =$_SESSION['iid'];      // read user key  
-	$host		        ="127.0.0.1"; 	        // Host name
-	$db_usr		        ="root"; 	        // Mysql username
-	$db_pwd		        ="1q2w3e4r"; 	        // Mysql password
-	$db_name	        ="project"; 	        // Database name
-	$tbl_name	        ="Appointments"; 	// Table name	
-	$cal_date		=$_POST['Cal_date'];    //Calender date from post    
+	    $host		            ="127.0.0.1"; 	        // Host name
+	    $db_usr		            ="root"; 	            // Mysql username
+	    $db_pwd		            ="1q2w3e4r"; 	        // Mysql password
+	    $db_name	            ="project"; 	        // Database name
+	    $tbl_name	            ="Appointments"; 	    // Table name	
+	    $cal_date       		=$_POST['Cal_date'];    //Calender date from post    
 
-        function clean($dbc,$in)
-        {
-                $step = stripslashes(trim($in));     
-                $clean = mysqli_real_escape_string($dbc, $step);
-                return $clean;
-        }
 
         if (isset($_SESSION['username'])) 
         {           
