@@ -28,7 +28,7 @@
 		$db_pwd		        ="1q2w3e4r"; 	        // Mysql password
 		$db_name	        ="project"; 	        // Database name
 		$tbl_name	        ="Appointments"; 	        // Table name	
-		$cal_date			=$_Post['Cal_date'];    //Calender date from post    
+		$cal_date			=$_POST['Cal_date'];    //Calender date from post    
 
         function clean($dbc,$in)
         {
