@@ -57,7 +57,7 @@
         if (!empty($clean_job) && !empty($clean_make)&& !empty($clean_model)&& !empty($clean_pt)&& !empty($clean_year)&& !empty($clean_miles)) 
                 {       // Insert into the DB
                         $query = "INSERT INTO $tbl_name( `Created_by`, `Cal_Date`, `Job_description`, `Car_make`, `Car_model`, `Car_powertrain`, `Car_year`, `Car_miles`) 
-								VALUES ([$iid],[$cal_date],[$clean_job],[$clean_make],[$clean_model],[$clean_pt],[$clean_year],[$clean_miles])";
+								VALUES ('$iid', '$cal_date', '$clean_job', '$clean_make', '$clean_model', '$clean_pt', '$clean_year', '$clean_miles')";
                         $data = mysqli_query($dbc, $query) or die("<p>Query failure: " . $query . " </p><br />");
                         echo "<p>Sending query: " . $query . " </p><br />"; //debuging
                         header("location: ../dates.php");  // comment this line to activate debugging        
