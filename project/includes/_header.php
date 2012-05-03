@@ -6,9 +6,9 @@
 		$_SESSION['views'] = (isset($_SESSION['views'])) ? $_SESSION['views']+ 1 : 1;
 
                 // debug info
-		echo "begin debug=-=-=-=-=-=-=-=-=<br />";
-		print_r($_SESSION);
-		echo "<br />end debug=-=-=-=-=-=-=-=-=-=<br />";			
+		//echo "begin debug=-=-=-=-=-=-=-=-=<br />";
+		//print_r($_SESSION);
+		//echo "<br />end debug=-=-=-=-=-=-=-=-=-=<br />";			
 	?>
 
 	<title><?php echo title; ?> | A Plus Auto and Truck Repair</title>
