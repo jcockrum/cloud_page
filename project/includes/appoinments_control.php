@@ -24,16 +24,6 @@
         print_r($_POST); 
         echo "<br />--------------------------<br />";
 
-// var's Defintion:
-        $_SESSION['err_msg']    ="";                    // Clear error messgae
-        $iid                    =$_SESSION['iid'];      // read user key  
-        $cal_date       		=$_POST['Cal_date'];    //Calender date from post    	    
-        $host		            ="127.0.0.1"; 	        // Host name
-        $db_usr		            ="root"; 	            // Mysql username
-        $db_pwd		            ="1q2w3e4r"; 	        // Mysql password
-        $db_name	            ="project"; 	        // Database name
-        $tbl_name	            ="Appointments"; 	    // Table name	
-
 // Function Definitions:
         function clean($dbc,$in)
         {
@@ -53,6 +43,16 @@
 
         //set error handler
         set_error_handler("customError",E_USER_WARNING);
+
+// var's Defintion:
+        $_SESSION['err_msg']    ="";                    // Clear error messgae
+        $iid                    =$_SESSION['iid'];      // read user key  
+        $cal_date       		=$_POST['Cal_date'];    //Calender date from post    	    
+        $host		            ="127.0.0.1"; 	        // Host name
+        $db_usr		            ="root"; 	            // Mysql username
+        $db_pwd		            ="1q2w3e4r"; 	        // Mysql password
+        $db_name	            ="project"; 	        // Database name
+        $tbl_name	            ="Appointments"; 	    // Table name	
         
 //Main Code
         if (isset($_SESSION['username'])) 
