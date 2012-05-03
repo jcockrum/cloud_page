@@ -58,7 +58,7 @@
                 {       // Insert into the DB
                         $query = "INSERT INTO $tbl_name( `Created_by`, `Cal_Date`, `Job_description`, `Car_make`, `Car_model`, `Car_powertrain`, `Car_year`, `Car_miles`) 
 								VALUES ([$iid],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])";
-                        //$data = mysqli_query($dbc, $query) or die("<p>Query failure: " . $query . " </p><br />");
+                        $data = mysqli_query($dbc, $query) or die("<p>Query failure: " . $query . " </p><br />");
                         echo "<p>Sending query: " . $query . " </p><br />"; //debuging
                         header("location: ../dates.php");  // comment this line to activate debugging        
                 } else { $_SESSION['err_msg'] = 'All fields must be filled in.';  
