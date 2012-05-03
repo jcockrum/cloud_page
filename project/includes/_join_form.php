@@ -1,6 +1,6 @@
 <h2 class="h2top"> <?php echo title; ?></h2>
 <div class="reg">
-        <form action="./includes/_join_control.php" method="post">
+        <form action="./includes/join_control.php" method="post">
                         <label>First Name: </label>
                         <input type="text" name="fname" id="fname" />
                         <br />
