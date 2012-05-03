@@ -32,6 +32,11 @@
     <input id="year" name="year" size="30" type="text" />
   </div>
   
+   <div class="field">
+    <label for="miles">Year:</label><br />
+    <input id="miles" name="miles" size="30" type="text" />
+  </div>
+  
   <div class="actions">
     <input id="user_submit" name="commit" type="submit" value="Set Appointment" />
   </div>
