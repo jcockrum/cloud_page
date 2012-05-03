@@ -1,19 +1,19 @@
 <h2 class="h2top"><?php echo title; ?></h2>
 
 <?php
-        session_start();
-        echo "<br /> Dates - Current Session-----------<br />"; //debuging
-        print_r($_SESSION);
-        echo "<br />----------------------------------------------<br />";        
+	session_start();
+	/*echo "<br /> Dates - Current Session-----------<br />"; //debuging
+	print_r($_SESSION);
+	echo "<br />----------------------------------------------<br />"; */
 
-        // var's Defintion:
-        $_SESSION['err_msg']    ="";                    // Clear error messgae
-        $usr                    =$_SESSION['iid'];      // Set User ID 
-	$host		        ="127.0.0.1"; 	        // Host name
-	$db_usr		        ="root"; 	        // Mysql username
-	$db_pwd		        ="1q2w3e4r"; 	        // Mysql password
-	$db_name	        ="project"; 	        // Database name
-	$tbl_name	        ="Appointments"; 	// Table name	
+	// var's Defintion:
+	$_SESSION['err_msg']    ="";                    // Clear error messgae
+	$usr                    =$_SESSION['iid'];      // Set User ID 
+	$host		        	="127.0.0.1"; 	        // Host name
+	$db_usr		        	="root"; 	        	// Mysql username
+	$db_pwd		        	="1q2w3e4r"; 	        // Mysql password
+	$db_name	        	="project"; 	        // Database name
+	$tbl_name	        	="Appointments"; 		// Table name	
 
         if (isset($_SESSION['username'])) 
         {           
