@@ -23,11 +23,11 @@
         // var's Defintion:
         $_SESSION['err_msg']    ="";                    // Clear error messgae
         $iid                    =$_SESSION['iid'];      // read user key  
-	$host		        ="127.0.0.1"; 	        // Host name
-	$db_usr		        ="root"; 	        // Mysql username
-	$db_pwd		        ="1q2w3e4r"; 	        // Mysql password
-	$db_name	        ="project"; 	        // Database name
-	$tbl_name	        ="Dates"; 	        // Table name	
+		$host		        ="127.0.0.1"; 	        // Host name
+		$db_usr		        ="root"; 	        // Mysql username
+		$db_pwd		        ="1q2w3e4r"; 	        // Mysql password
+		$db_name	        ="project"; 	        // Database name
+		$tbl_name	        ="Appointments"; 	        // Table name	
 
 
         function clean($dbc,$in)
@@ -43,13 +43,21 @@
                 $dbc = mysqli_connect($host, $db_usr, $db_pwd, $db_name) or die("connection failure with " . $host . " -> " . $dbname);
                 echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />"; //debuging
                 // Grab and clean form data
-                $clean_date = clean($dbc, $_POST['cal_date']);                
-                $clean_hours = clean($dbc, $_POST['at_time']);
-                echo "<p>Cleaned vars: [" . $clean_date . ", " . $clean_hours . "]</p><br />"; //debuging
+				
+                $clean_job = clean($dbc, $_POST['job']); 
+				$clean_make = clean($dbc, $_POST['make']); 
+				$clean_model = clean($dbc, $_POST['model']); 
+				$clean_pt = clean($dbc, $_POST['pt']); 
+				$clean_year = clean($dbc, $_POST['year']); 
+				$clean_miles = clean($dbc, $_POST['miles']); 
+                
+                
+				echo "<p>Cleaned vars: [" . $clean_date . ", " . $clean_hours . "]</p><br />"; //debuging
 
                 if (!empty($clean_date) && !empty($clean_hours)) 
                 {       // Insert into the DB
-                        $query = "INSERT INTO Dates VALUES (NULL,'$clean_date','$clean_hours', 0, $iid);";
+                        $query = "INSERT INTO $tbl_name( `Created_by`, `Cal_Date`, `Job_description`, `Car_make`, `Car_model`, `Car_powertrain`, `Car_year`, `Car_miles`) 
+								VALUES ([$iid],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])";
                         $data = mysqli_query($dbc, $query) or die("<p>Query failure: " . $query . " </p><br />");
                         echo "<p>Sending query: " . $query . " </p><br />"; //debuging
                         header("location: ../dates.php");  // comment this line to activate debugging        

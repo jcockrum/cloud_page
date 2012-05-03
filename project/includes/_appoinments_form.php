@@ -8,28 +8,28 @@
   </div>
   
   <div class="field">
-    <label for="job_description">Service Request:</label><br />
-    <input id="job_description" name="job_description" size="30" type="text" />
+    <label for="job">Service Request:</label><br />
+    <input id="job" name="job" size="30" type="text" />
   </div>
   
   <div class="field">
-    <label for="car_make">Make:</label><br />
-    <input id="car_make" name="car_make" size="30" type="text" />
+    <label for="make">Make:</label><br />
+    <input id="make" name="make" size="30" type="text" />
   </div>
   
    <div class="field">
-    <label for="car_model">Model:</label><br />
-    <input id="car_model" name="car_model" size="30" type="text" />
+    <label for="model">Model:</label><br />
+    <input id="model" name="model" size="30" type="text" />
   </div>
   
    <div class="field">
-    <label for="car_powertrain">Engine Size:</label><br />
-    <input id="car_powertrain" name="car_powertrain" size="30" type="text" />
+    <label for="pt">Engine Size:</label><br />
+    <input id="pt" name="pt" size="30" type="text" />
   </div>
   
    <div class="field">
-    <label for="car_year">Year:</label><br />
-    <input id="car_year" name="car_year" size="30" type="text" />
+    <label for="year">Year:</label><br />
+    <input id="year" name="year" size="30" type="text" />
   </div>
   
   <div class="actions">
