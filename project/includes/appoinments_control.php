@@ -45,16 +45,16 @@
                 // Grab and clean form data
 				
                 $clean_job = clean($dbc, $_POST['job']); 
-				$clean_make = clean($dbc, $_POST['make']); 
-				$clean_model = clean($dbc, $_POST['model']); 
-				$clean_pt = clean($dbc, $_POST['pt']); 
-				$clean_year = clean($dbc, $_POST['year']); 
-				$clean_miles = clean($dbc, $_POST['miles']); 
-                
-                
-				echo "<p>Cleaned vars: [" . $iid . ", " . $cal_date . ", " .  $clean_job . ", " . $clean_make . ", " . $clean_model . ", " . $clean_pt . ", " . $clean_year . ", " . $clean_miles . "]</p><br />"; //debuging
+	        $clean_make = clean($dbc, $_POST['make']); 
+	        $clean_model = clean($dbc, $_POST['model']); 
+	        $clean_pt = clean($dbc, $_POST['pt']); 
+	        $clean_year = clean($dbc, $_POST['year']); 
+	        $clean_miles = clean($dbc, $_POST['miles']); 
 
-                if (!empty($clean_date) && !empty($clean_hours)) 
+
+	        echo "<p>Cleaned vars: [" . $iid . ", " . $cal_date . ", " .  $clean_job . ", " . $clean_make . ", " . $clean_model . ", " . $clean_pt . ", " . $clean_year . ", " . $clean_miles . "]</p><br />"; //debuging
+
+        if (!empty($clean_job) && !empty($clean_make)&& !empty($clean_model)&& !empty($clean_pt)&& !empty($clean_year)&& !empty($clean_miles)) 
                 {       // Insert into the DB
                         $query = "INSERT INTO $tbl_name( `Created_by`, `Cal_Date`, `Job_description`, `Car_make`, `Car_model`, `Car_powertrain`, `Car_year`, `Car_miles`) 
 								VALUES ([$iid],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])";

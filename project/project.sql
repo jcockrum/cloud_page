@@ -48,8 +48,7 @@ CREATE TABLE IF NOT EXISTS `Appointments` (
   `Car_year` varchar(4) NOT NULL,
   `Car_miles` varchar(7) NOT NULL,
   PRIMARY KEY (`InvoiceID`),
-  KEY `Created_by` (`Created_by`),
-  UNIQUE KEY `appt_time` (`Cal_Date`)
+  KEY `Created_by` (`Created_by`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 -- --------------------------------------------------------
 -- Constraints for table `Dates`
@@ -57,8 +56,6 @@ CREATE TABLE IF NOT EXISTS `Appointments` (
 ALTER TABLE `Dates`
   ADD CONSTRAINT `Dates_ibfk_1` FOREIGN KEY (`Created_by`) REFERENCES `Identities` (`IID`);
 -- Constraints for table `Appointments`
-ALTER TABLE `Appointments`
-  ADD CONSTRAINT `Appointments_ibfk_2` FOREIGN KEY (`Cal_Date`) REFERENCES `Dates` (`DID`);
 ALTER TABLE `Appointments`
   ADD CONSTRAINT `Appointments_ibfk_1` FOREIGN KEY (`Created_by`) REFERENCES `Identities` (`IID`);
 
