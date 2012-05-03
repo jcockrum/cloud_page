@@ -60,12 +60,12 @@
 								VALUES ('$iid', '$cal_date', '$clean_job', '$clean_make', '$clean_model', '$clean_pt', '$clean_year', '$clean_miles')";
                         $data = mysqli_query($dbc, $query) or die("<p>Query failure: " . $query . " </p><br />");
                         echo "<p>Sending query: " . $query . " </p><br />"; //debuging
-                        header("location: ../dates.php");  // comment this line to activate debugging        
+                        header("location: ../set_appointments.php");  // comment this line to activate debugging        
                 } else { $_SESSION['err_msg'] = 'All fields must be filled in.';  
-                       //header("location: ../_php_fail.php");  // comment this line to activate debugging
+                       header("location: ../_php_fail.php");  // comment this line to activate debugging
                        } 
       } else { 
         $_SESSION['err_msg'] = 'Sorry, you must be loged in to complete this action.';  
-        //header("location: ../_php_fail.php"); // comment this line to activate debugging
+        header("location: ../_php_fail.php"); // comment this line to activate debugging
       }
 ?>
