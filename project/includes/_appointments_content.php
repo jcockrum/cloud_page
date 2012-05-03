@@ -16,7 +16,8 @@
                 //echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />"; //debuging
                 
 				
-				($_SESSION['role']=='A') ? $query = "SELECT * FROM $tbl_name" : $query = "SELECT * FROM $tbl_name WHERE Created_by = $_SESSION['iid']";
+				if ($_SESSION['role']=='A') { $query = "SELECT * FROM $tbl_name" ;}
+						else {$query = "SELECT * FROM $tbl_name WHERE Created_by = $_SESSION['iid']";}
 				
 				
 				
@@ -29,8 +30,7 @@
                         echo "<table border='1'>";//start table -- creating our table heading
                         echo "<caption><h1>{$tbl_name}</h1></caption>";                        
                         echo "<tr>";
-                                echo "<th>Invoice
-								ID</th>";
+                                echo "<th>InvoiceID</th>";
                                 echo "<th>Created_by</th>";
                                 echo "<th>Cal_Date</th>";
                                 echo "<th>Job_description</th>";
