@@ -28,7 +28,7 @@
 		$db_pwd		        ="1q2w3e4r"; 	        // Mysql password
 		$db_name	        ="project"; 	        // Database name
 		$tbl_name	        ="Appointments"; 	        // Table name	
-
+		$cal_date			=$_Post['Cal_date'];    //Calender date from post    
 
         function clean($dbc,$in)
         {
@@ -52,7 +52,7 @@
 				$clean_miles = clean($dbc, $_POST['miles']); 
                 
                 
-				echo "<p>Cleaned vars: [" . $clean_date . ", " . $clean_job . ", " . $clean_make . ", " . $clean_model . ", " . $clean_pt . ", " . $clean_year . ", " . $clean_miles . "]</p><br />"; //debuging
+				echo "<p>Cleaned vars: [" . $iid . ", " . $cal_date' . ", " .  $clean_job . ", " . $clean_make . ", " . $clean_model . ", " . $clean_pt . ", " . $clean_year . ", " . $clean_miles . "]</p><br />"; //debuging
 
                 if (!empty($clean_date) && !empty($clean_hours)) 
                 {       // Insert into the DB
