@@ -33,7 +33,7 @@
   </div>
   
    <div class="field">
-    <label for="miles">Year:</label><br />
+    <label for="miles">Mileage:</label><br />
     <input id="miles" name="miles" size="30" type="text" />
   </div>
   
