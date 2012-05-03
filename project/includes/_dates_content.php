@@ -1,6 +1,23 @@
 <h2 class="h2top"><?php echo title; ?></h2>
 
 <?php
+	session_start();   
+        /*// debuging block        
+        echo "Stage 0 <br /> Current Session-----------<br />";
+        print_r($_SESSION);
+        echo "<br />--------------------------<br />";        
+        print_r($_POST); */
+        
+        //or trigger_error("DB write fail",E_USER_WARNING); // 'or die' replacement  
+        //error handler function
+        function customError($errno, $errstr)
+        {
+                //echo "<b>Error:</b> [$errno] $errstr<br />";
+                $_SESSION['err_msg'] = "<b>Error:</b> [$errno] $errstr<br />"; 
+                header("location: ../_php_fail.php");
+                die();
+        }
+
         // var's Defintion:
         $_SESSION['err_msg']    ="";                    // Clear error messgae
 	$host		        ="127.0.0.1"; 	        // Host name
@@ -12,10 +29,12 @@
         if (isset($_SESSION['username'])) 
         {           
                 // Connect to the database
-                $dbc = mysqli_connect($host, $db_usr, $db_pwd, $db_name) or die("connection failure with " . $host . " -> " . $dbname);
+                $dbc = mysqli_connect($host, $db_usr, $db_pwd, $db_name) or trigger_error("DB Connect fail",E_USER_WARNING);
+                //or die("connection failure with " . $host . " -> " . $dbname);
                 //echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />"; //debuging
                 $query = "SELECT * FROM $tbl_name";
-                $data = mysqli_query($dbc, $query) or die("<p>Query failure:" . $query . " </p><br />");
+                $data = mysqli_query($dbc, $query) or trigger_error("DB read fail",E_USER_WARNING);
+                //or die("<p>Query failure:" . $query . " </p><br />");
                 //echo "<p>Sending query: " . $query . " </p><br />"; //debuging
                 //get number of rows returned
                 $num_datas = $data->num_rows;

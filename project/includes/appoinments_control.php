@@ -16,19 +16,42 @@
         */
 
 	session_start();
-        echo "<br /> Dates - Current Session-----------<br />"; //debuging
+        
+        /*// debuging block        
+        echo "Stage 0 <br /> Current Session-----------<br />";
         print_r($_SESSION);
-        echo "<br />----------------------------------------------<br />";        
+        echo "<br />--------------------------<br />";        
+        print_r($_POST); */
+
+        function clean($dbc,$in)
+        {
+                $step = stripslashes(trim($in));     
+                $clean = mysqli_real_escape_string($dbc, $step);
+                return $clean;
+        }
+        
+        //or trigger_error("DB write fail",E_USER_WARNING); // 'or die' replacement  
+        //error handler function
+        function customError($errno, $errstr)
+        {
+                //echo "<b>Error:</b> [$errno] $errstr<br />";
+                $_SESSION['err_msg'] = "<b>Error:</b> [$errno] $errstr<br />"; 
+                header("location: ../_php_fail.php");
+                die();
+        }
+        
+        //set error handler
+        set_error_handler("customError",E_USER_WARNING)
 
         // var's Defintion:
         $_SESSION['err_msg']    ="";                    // Clear error messgae
         $iid                    =$_SESSION['iid'];      // read user key  
-		$host		        ="127.0.0.1"; 	        // Host name
-		$db_usr		        ="root"; 	        // Mysql username
-		$db_pwd		        ="1q2w3e4r"; 	        // Mysql password
-		$db_name	        ="project"; 	        // Database name
-		$tbl_name	        ="Appointments"; 	        // Table name	
-		$cal_date			=$_POST['Cal_date'];    //Calender date from post    
+	$host		        ="127.0.0.1"; 	        // Host name
+	$db_usr		        ="root"; 	        // Mysql username
+	$db_pwd		        ="1q2w3e4r"; 	        // Mysql password
+	$db_name	        ="project"; 	        // Database name
+	$tbl_name	        ="Appointments"; 	// Table name	
+	$cal_date		=$_POST['Cal_date'];    //Calender date from post    
 
         function clean($dbc,$in)
         {
@@ -40,8 +63,9 @@
         if (isset($_SESSION['username'])) 
         {           
                 // Connect to the database
-                $dbc = mysqli_connect($host, $db_usr, $db_pwd, $db_name) or die("connection failure with " . $host . " -> " . $dbname);
-                echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />"; //debuging
+                $dbc = mysqli_connect($host, $db_usr, $db_pwd, $db_name) or trigger_error("DB Connect fail",E_USER_WARNING);
+                //or die("connection failure with " . $host . " -> " . $dbname);
+                // echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />"; //debuging
                 // Grab and clean form data
 				
                 $clean_job = clean($dbc, $_POST['job']); 
@@ -57,7 +81,8 @@
         if (!empty($clean_job) && !empty($clean_make)&& !empty($clean_model)&& !empty($clean_pt)&& !empty($clean_year)&& !empty($clean_miles)) 
                 {       // Insert into the DB
                         $query = "INSERT INTO $tbl_name( `Created_by`, `Cal_Date`, `Job_description`, `Car_make`, `Car_model`, `Car_powertrain`, `Car_year`, `Car_miles`) VALUES ('$iid', '$cal_date', '$clean_job', '$clean_make', '$clean_model', '$clean_pt', '$clean_year', '$clean_miles')";
-                        $data = mysqli_query($dbc, $query) or die("<p>Query failure: " . $query . " </p><br />");
+                        $data = mysqli_query($dbc, $query) or trigger_error("DB write fail",E_USER_WARNING);
+                        //or die("<p>Query failure: " . $query . " </p><br />");
                         //echo "<p>Sending query: " . $query . " </p><br />"; //debuging
                         header("location: ../appointments.php");  // comment this line to activate debugging        
                 } else { $_SESSION['err_msg'] = 'All fields must be filled in.';  

@@ -27,6 +27,8 @@
         
         //set error handler
         set_error_handler("customError",E_USER_WARNING);
+
+
         // var's Defintion:
         $_SESSION['err_msg']    ="";            // Clear error messgae
 	$host		        ="127.0.0.1"; 	// Host name
