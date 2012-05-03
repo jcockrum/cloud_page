@@ -14,7 +14,12 @@
                 // Connect to the database
                 $dbc = mysqli_connect($host, $db_usr, $db_pwd, $db_name) or die("connection failure with " . $host . " -> " . $dbname);
                 //echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />"; //debuging
-                $query = "SELECT * FROM $tbl_name";
+                
+				
+				($_SESSION['role']=='A') ? $query = "SELECT * FROM $tbl_name" : $query = "SELECT * FROM $tbl_name WHERE Created_by = $_SESSION['iid']";
+				
+				
+				
                 $data = mysqli_query($dbc, $query) or die("<p>Query failure:" . $query . " </p><br />");
                 //echo "<p>Sending query: " . $query . " </p><br />"; //debuging
                 //get number of rows returned
@@ -24,7 +29,8 @@
                         echo "<table border='1'>";//start table -- creating our table heading
                         echo "<caption><h1>{$tbl_name}</h1></caption>";                        
                         echo "<tr>";
-                                echo "<th>InvoiceID</th>";
+                                echo "<th>Invoice
+								ID</th>";
                                 echo "<th>Created_by</th>";
                                 echo "<th>Cal_Date</th>";
                                 echo "<th>Job_description</th>";
