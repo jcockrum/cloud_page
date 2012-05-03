@@ -1,26 +1,29 @@
 <h2 class="h2top"><?php echo title; ?></h2>
 
 <?php
+        session_start();
+        echo "<br /> Dates - Current Session-----------<br />"; //debuging
+        print_r($_SESSION);
+        echo "<br />----------------------------------------------<br />";        
+
         // var's Defintion:
         $_SESSION['err_msg']    ="";                    // Clear error messgae
+        $usr                    =$_SESSION['iid'];      // Set User ID 
 	$host		        ="127.0.0.1"; 	        // Host name
 	$db_usr		        ="root"; 	        // Mysql username
 	$db_pwd		        ="1q2w3e4r"; 	        // Mysql password
 	$db_name	        ="project"; 	        // Database name
-	$tbl_name	        ="Appointments"; 	        // Table name	
+	$tbl_name	        ="Appointments"; 	// Table name	
 
         if (isset($_SESSION['username'])) 
         {           
                 // Connect to the database
                 $dbc = mysqli_connect($host, $db_usr, $db_pwd, $db_name) or die("connection failure with " . $host . " -> " . $dbname);
                 //echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />"; //debuging
-                
-				
-				if ($_SESSION['role']=='A') { $query = "SELECT * FROM $tbl_name" ;}
-						else {$query = "SELECT * FROM $tbl_name WHERE Created_by = $_SESSION['iid']";}
-				
-				
-				
+                //echo "<p>If switch from session: " . $_SESSION['role'] . " </p><br />"; //debuging
+                //echo "<p>checking user: " . $usr . " </p><br />"; //debuging
+	        if ($_SESSION['role']=='A') { $query = "SELECT * FROM $tbl_name";}
+                else {$query = "SELECT * FROM $tbl_name WHERE Created_by = $usr";}
                 $data = mysqli_query($dbc, $query) or die("<p>Query failure:" . $query . " </p><br />");
                 //echo "<p>Sending query: " . $query . " </p><br />"; //debuging
                 //get number of rows returned
@@ -35,11 +38,11 @@
                                 echo "<th>Cal_Date</th>";
                                 echo "<th>Job_description</th>";
                                 echo "<th>Car_make</th>";
-								echo "<th>Car_model</th>";
-								echo "<th>Car_powertrain</th>";
-								echo "<th>Car_year</th>";
-								echo "<th>Car_miles</th>";
-                        echo "</tr>";                                              
+				echo "<th>Car_model</th>";
+				echo "<th>Car_powertrain</th>";
+				echo "<th>Car_year</th>";
+				echo "<th>Car_miles</th>";
+                                echo "</tr>";                                              
                         while( $row = $data->fetch_assoc() ) //loop to show each records
                         {       //extract row -- this will make a $row['firstname'] to just a variable $firstname only
                                 extract($row);
@@ -49,11 +52,11 @@
                                         echo "<td>{$Cal_Date}</td>";
                                         echo "<td>{$Job_description}</td>";
                                         echo "<td>{$Car_make}</td>";
-										echo "<td>{$Car_model}</td>";
-										echo "<td>{$Car_powertrain}</td>";
-										echo "<td>{$Car_year}</td>";
-										echo "<td>{$Car_miles}</td>";
-        // inline Edit / Delete -- might play with this later
+					echo "<td>{$Car_model}</td>";
+					echo "<td>{$Car_powertrain}</td>";
+					echo "<td>{$Car_year}</td>";
+					echo "<td>{$Car_miles}</td>";
+                        // inline Edit / Delete -- might play with this later
                                 /*      echo "<td>";//just preparing the edit link to edit the record
                                         echo "<a href='edit.php?id={$id}'>Edit</a>";
                                         echo " / ";//just preparing the delete link to delete the record

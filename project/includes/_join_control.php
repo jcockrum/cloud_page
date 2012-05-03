@@ -1,5 +1,9 @@
 <?php
         // this script needs to be updated to be like auth_control
+        
+/*  This page needs to be rebuilt to current standard */        
+
+
         session_start();
         /*    This is the target table:
         *    +----------+----------------------------+------+-----+------------------+----------------+
@@ -32,7 +36,15 @@
                      VALUES ('C', '$_POST[fname]','$_POST[lname]','$_POST[phnum]','$_POST[email]','$_POST[password]');")
                 or die("<br />failed <br />");
         
+
+
+        // set session variables after login 
+
+
+
+        
         $_SESSION['username']= $_POST[fname] . " " . $_POST[lname];
         $_SESSION['email']= $_POST[email] ;
+
 	header("location: ../_php_success.php");
 ?>
