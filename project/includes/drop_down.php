@@ -87,10 +87,7 @@
     $name = 'Cal_date';
     $options = array( );
     $selected = 1;
-
     if($DEBUG){echo "<br /><form>";}
     echo dropListBox($name, $options, $selected);
     if($DEBUG){echo "</form>";}
-
-
 ?>
