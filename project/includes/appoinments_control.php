@@ -26,7 +26,6 @@
         echo "<br />--------------------------<br />";
     }      
  
-
 // Function Definitions:
         function clean($dbc,$in)
         {
