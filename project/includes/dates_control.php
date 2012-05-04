@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $DEBUG=1;// Debug flag ( 1 for true, "" for false)
+    $DEBUG="";// Debug flag ( 1 for true, "" for false)
     if($DEBUG) 
     {    
     echo "<br /> Dates - Current Session-----------<br />";
