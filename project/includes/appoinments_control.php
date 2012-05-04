@@ -14,15 +14,18 @@
        | Car_miles       | varchar(7)                | NO   |     | NULL    |                |
        +-----------------+---------------------------+------+-----+---------+----------------+
         */
+    session_start();
+    $DEBUG="";// Debug flag ( 1 for true, "" for false)
 
-        session_start();
-        
-        // debuging block        
-     /* echo "Current Session-----------<br />";
-        print_r($_SESSION);
-        echo "<br />--------------------------<br />";        
+    if($DEBUG) 
+    {    
+        echo "<br /> Dates - Current Session-----------<br />"; //debuging
+	    print_r($_SESSION);
+	    echo "<br />----------------------------------------------<br />";
         print_r($_POST); 
-        echo "<br />--------------------------<br />"; */
+        echo "<br />--------------------------<br />";
+    }      
+ 
 
 // Function Definitions:
         function clean($dbc,$in)
@@ -59,9 +62,8 @@
         {           
             // Connect to the database
             $dbc = mysqli_connect($host, $db_usr, $db_pwd, $db_name) or trigger_error("DB Connect fail",E_USER_WARNING);
-            //echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />"; //debuging
-            // Grab and clean form data
-				
+            if($DEBUG) { echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />";}
+            // Grab and clean form data	
             $clean_job = clean($dbc, $_POST['job']); 
 	        $clean_make = clean($dbc, $_POST['make']); 
 	        $clean_model = clean($dbc, $_POST['model']); 
@@ -69,24 +71,24 @@
 	        $clean_year = clean($dbc, $_POST['year']); 
 	        $clean_miles = clean($dbc, $_POST['miles']); 
 
-            //echo "<p>Cleaned vars: [" . $iid . ", " . $cal_date . ", " . $clean_job . ", " . $clean_make "; //debuging
-            //echo ", " . $clean_model . ", " . $clean_pt . ", " . $clean_year . ", " . $clean_miles . "]</p><br />"; //debuging
-
+            if($DEBUG) 
+            {
+                echo "<p>Cleaned vars: [" . $iid . ", " . $cal_date . ", " . $clean_job . ", " . $clean_make;
+                echo ", " . $clean_model . ", " . $clean_pt . ", " . $clean_year . ", " . $clean_miles . "]</p><br />";
+            }
             if (!empty($clean_job) && !empty($clean_make)&& !empty($clean_model)&& !empty($clean_pt)&& !empty($clean_year)&& !empty($clean_miles)) 
             {       // Insert into the DB
-                $query = "INSERT INTO 
-                    $tbl_name( `Created_by`, `Cal_Date`, `Job_description`, `Car_make`, `Car_model`, `Car_powertrain`, `Car_year`, `Car_miles`) 
-                    VALUES ('$iid', '$cal_date', '$clean_job', '$clean_make', '$clean_model', '$clean_pt', '$clean_year', '$clean_miles')";
-                //$data = mysqli_query($dbc, $query) or trigger_error("DB write fail",E_USER_WARNING);
-                //echo "<p>Sending query: " . $query . " </p><br />"; //debuging
-                header("location: ../appointments.php");  // comment this line to activate debugging        
+                $query = "INSERT INTO $tbl_name (Created_by, Cal_Date, Job_description, Car_make, Car_model, Car_powertrain, Car_year, Car_miles) VALUES ('$iid', '$cal_date', '$clean_job', '$clean_make', '$clean_model', '$clean_pt', '$clean_year', '$clean_miles')";
+                $data = mysqli_query($dbc, $query) or trigger_error("DB write fail",E_USER_WARNING);
+                if($DEBUG) {echo "<p>Sending query: " . $query . " </p><br />";}
+                if (!$DEBUG) {header("location: ../appointments.php");}
             } else { 
                 $_SESSION['err_msg'] = 'All fields must be filled in.';  
-                header("location: ../_php_fail.php");  // comment this line to activate debugging
+                if (!$DEBUG) {header("location: ../_php_fail.php");}
             }
             
         } else { 
             $_SESSION['err_msg'] = 'Sorry, you must be loged in to complete this action.';  
-            header("location: ../_php_fail.php"); // comment this line to activate debugging
+            if (!$DEBUG) {header("location: ../_php_fail.php");}
         }
 ?>

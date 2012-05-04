@@ -30,17 +30,16 @@
 
         // var's Defintion:
         $_SESSION['err_msg']    ="";            // Clear error messgae
-	$host		        ="127.0.0.1"; 	// Host name
-	$db_usr		        ="root"; 	// Mysql username
-	$db_pwd		        ="1q2w3e4r"; 	// Mysql password
-	$db_name	        ="project"; 	// Database name
-	$tbl_name	        ="Identities"; 	// Table name	
+        $host		            ="127.0.0.1"; 	// Host name
+        $db_usr		            ="root"; 	    // Mysql username
+        $db_pwd		            ="1q2w3e4r"; 	// Mysql password
+        $db_name	            ="project"; 	// Database name
+        $tbl_name	            ="Identities"; 	// Table name	
 
         if (!isset($_SESSION['username'])) 
         {           
                 // Connect to the database
                 $dbc = mysqli_connect($host, $db_usr, $db_pwd, $db_name) or trigger_error("DB connection fail",E_USER_WARNING); 
-                //or die("connection failure with " . $host . " -> " . $dbname);
                 //echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />"; //debuging
 
                 // Grab and clean form data
@@ -52,7 +51,6 @@
                 {       // Look up the username and password in the database
                         $query = "SELECT * FROM $tbl_name WHERE Email='$clean_user' AND PassWd='$clean_pass'";
                         $data = mysqli_query($dbc, $query) or trigger_error("DB read fail",E_USER_WARNING);
-                        //or die("<p>Query failure:" . $query . " </p><br />");
                         //echo "<p>Sending query: " . $query . " </p><br />"; //debuging
                         if (mysqli_num_rows($data) == 1) 
                         {       // Suscess
@@ -65,7 +63,7 @@
                                /* echo "<br />new session---------------<br />"; // debuging
                                 print_r($_SESSION);
                                 echo "<br />--------------------------<br />";  */
-                                header("location: ../appointments.php"); // comment this line to activate debugging
+                                header("location: ../set_appointments.php"); // comment this line to activate debugging
                        } else { 
                                 $_SESSION['err_msg'] = 'You must enter a valid username and password to log in.';  
                                 header("location: ../_php_fail.php");  // comment this line to activate debugging

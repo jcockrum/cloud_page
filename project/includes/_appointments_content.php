@@ -1,10 +1,15 @@
 <h2 class="h2top"><?php echo title; ?></h2>
 
 <?php
-	session_start();
-	/*echo "<br /> Dates - Current Session-----------<br />"; //debuging
-	print_r($_SESSION);
-	echo "<br />----------------------------------------------<br />"; */
+    session_start();
+    $DEBUG="";// Debug flag ( 1 for true, "" for false)
+
+    if($DEBUG) 
+    {    
+        echo "<br /> Dates - Current Session-----------<br />"; //debuging
+	    print_r($_SESSION);
+	    echo "<br />----------------------------------------------<br />";
+    }
 
 	// var's Defintion:
 	$_SESSION['err_msg']    ="";                    // Clear error messgae
@@ -19,13 +24,16 @@
         {           
                 // Connect to the database
                 $dbc = mysqli_connect($host, $db_usr, $db_pwd, $db_name) or die("connection failure with " . $host . " -> " . $dbname);
-                //echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />"; //debuging
-                //echo "<p>If switch from session: " . $_SESSION['role'] . " </p><br />"; //debuging
-                //echo "<p>checking user: " . $usr . " </p><br />"; //debuging
-	        if ($_SESSION['role']=='A') { $query = "SELECT * FROM $tbl_name";}
+                if($DEBUG) 
+                {
+                    echo "<p>Connected to:" . $host . " -> " . $db_name . " </p><br />";
+                    echo "<p>If switch from session: " . $_SESSION['role'] . " </p><br />";
+                    echo "<p>checking user: " . $usr . " </p><br />";
+                }
+	            if ($_SESSION['role']=='A') { $query = "SELECT * FROM $tbl_name";}
                 else {$query = "SELECT * FROM $tbl_name WHERE Created_by = $usr";}
                 $data = mysqli_query($dbc, $query) or die("<p>Query failure:" . $query . " </p><br />");
-                //echo "<p>Sending query: " . $query . " </p><br />"; //debuging
+                if($DEBUG) {echo "<p>Sending query: " . $query . " </p><br />";}
                 //get number of rows returned
                 $num_datas = $data->num_rows;
                 if( $num_datas > 0)//will not make a table without records
@@ -67,13 +75,13 @@
                         }
                         echo "</table>";//end table
                 } else {
-                        echo "No records found.";
+                        echo "No Appointments set.";
                 }
                 // Cleanup
                 $data->free();
                 $dbc->close();      
         } else { 
-                $_SESSION['err_msg'] = 'Sorry, you must be loged in to complete this action.';  
-                header("location: ../_php_fail.php"); // comment this line to activate debugging
+            $_SESSION['err_msg'] = 'Sorry, you must be loged in to complete this action.';  
+            if (!$DEBUG) {header("location: ../_php_fail.php");}
         }
 ?>
