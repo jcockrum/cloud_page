@@ -85,7 +85,9 @@
                 $_SESSION['err_msg'] = 'All fields must be filled in.';  
                 if (!$DEBUG) {header("location: ../_php_fail.php");}
             }
-            
+            // Cleanup
+            $data->free();
+            $dbc->close(); 
         } else { 
             $_SESSION['err_msg'] = 'Sorry, you must be loged in to complete this action.';  
             if (!$DEBUG) {header("location: ../_php_fail.php");}

@@ -71,7 +71,7 @@
             $_SESSION['username'] = $row['Email'];
             setcookie('username', $row['Email'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
             header("location: ../set_appointments.php"); // comment this line to activate debugging
-        }
+        } 
     } else { 
         $_SESSION['err_msg'] = 'Your Must fill in all the fields.';  
         header("location: ../_php_fail.php"); // comment this line to activate debugging

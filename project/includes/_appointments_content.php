@@ -41,38 +41,38 @@
                         echo "<table border='1'>";//start table -- creating our table heading
                         echo "<caption><h1>{$tbl_name}</h1></caption>";                        
                         echo "<tr>";
-                                echo "<th>InvoiceID</th>";
-                                echo "<th>Created_by</th>";
-                                echo "<th>Cal_Date</th>";
-                                echo "<th>Job_description</th>";
-                                echo "<th>Car_make</th>";
-				echo "<th>Car_model</th>";
-				echo "<th>Car_powertrain</th>";
-				echo "<th>Car_year</th>";
-				echo "<th>Car_miles</th>";
-                                echo "</tr>";                                              
+                            if($_SESSION['role'] == "A") {echo "<th>InvoiceID</th>";}
+                            if($_SESSION['role'] == "A") {echo "<th>Created_by</th>";}
+                            echo "<th>Cal_Date</th>";
+                            echo "<th>Job_description</th>";
+                            echo "<th>Car_make</th>";
+                            echo "<th>Car_model</th>";
+                            echo "<th>Car_powertrain</th>";
+                            echo "<th>Car_year</th>";
+                            echo "<th>Car_miles</th>";
+                        echo "</tr>";                                              
                         while( $row = $data->fetch_assoc() ) //loop to show each records
                         {       //extract row -- this will make a $row['firstname'] to just a variable $firstname only
                                 extract($row);
-                                echo "<tr>";//creating new table row per record
-                                        echo "<td>{$InvoiceID}</td>";
-                                        echo "<td>{$Created_by}</td>";
+                                    echo "<tr>";//creating new table row per record
+                                        if($_SESSION['role'] == "A") {echo "<td>{$InvoiceID}</td>";}
+                                        if($_SESSION['role'] == "A") {echo "<td>{$Created_by}</td>";}
                                         echo "<td>{$Cal_Date}</td>";
                                         echo "<td>{$Job_description}</td>";
                                         echo "<td>{$Car_make}</td>";
-					echo "<td>{$Car_model}</td>";
-					echo "<td>{$Car_powertrain}</td>";
-					echo "<td>{$Car_year}</td>";
-					echo "<td>{$Car_miles}</td>";
-                        // inline Edit / Delete -- might play with this later
-                                /*      echo "<td>";//just preparing the edit link to edit the record
+                                        echo "<td>{$Car_model}</td>";
+                                        echo "<td>{$Car_powertrain}</td>";
+                                        echo "<td>{$Car_year}</td>";
+                                        echo "<td>{$Car_miles}</td>";
+                                // inline Edit / Delete -- might play with this later
+                                        /*      echo "<td>";//just preparing the edit link to edit the record
                                         echo "<a href='edit.php?id={$id}'>Edit</a>";
                                         echo " / ";//just preparing the delete link to delete the record
                                         echo "<a href='#' onclick='delete_user( {$id} );'>Delete</a>";
                                         echo "</td>"; 
-                                */
-                                echo "</tr>";
-                        }
+                                        */
+                                    echo "</tr>";
+                                    }
                         echo "</table>";//end table
                 } else {
                         echo "No Appointments set.";
