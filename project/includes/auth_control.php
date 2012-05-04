@@ -70,7 +70,7 @@
                         echo "<br />--------------------------<br />";
                     } else if($_SESSION['role'] == "A")
                         {header("location: ../appointments.php");}
-                        else {header("location: ../set_appointments.php");}
+                        else {header("location: ../set_appointment.php");}
            } else { 
             $_SESSION['err_msg'] = 'You must enter a valid username and password to log in.';  
             if(!$DEBUG) {header("location: ../_php_fail.php");}
