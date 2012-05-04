@@ -1,5 +1,5 @@
 <br />
-<h2 class="h2top">Create New Record</h2>
+<h2 class="h2top">Create New Appointment Time</h2>
 <div class="reg">
         <form action="./includes/dates_control.php" method="post">
                         <label>Calendar Date: </label>
