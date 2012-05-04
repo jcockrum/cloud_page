@@ -54,7 +54,7 @@
             if($DEBUG) { echo "<p>Sending query: " . $query . " </p><br />"; }
             if(!$DEBUG) {header("location: ../dates.php");}
         } else { 
-            $_SESSION['err_msg'] = 'Unable to complete that action.';  
+            $_SESSION['err_msg'] = 'Please fill in all of the fields';  
             if (!$DEBUG) {header("location: ../_php_fail.php");}
         } 
     } else { 
